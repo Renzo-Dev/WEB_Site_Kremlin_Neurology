@@ -1,12 +1,15 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.AspNetCore.Mvc.ViewFeatures;
 
-namespace Kremlin_Neurology.Controllers;
-
-public class HomeController : Controller
+namespace Kremlin_Neurology.Controllers
 {
-    [HttpGet]
-    public IActionResult Index()
+    public class HomeController : Controller
     {
-        return View();
+        [HttpGet]
+        public IActionResult Index()
+        {
+            return View();
+        }
     }
 }

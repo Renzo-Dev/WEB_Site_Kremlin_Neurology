@@ -1,11 +1,27 @@
-﻿<!DOCTYPE html>
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<!DOCTYPE html>
 <html>
 <head>
     <title>@ViewData["Title"]</title>
 </head>
 <body>
-
+<link rel="stylesheet" href="~/styles/layout.css">
+<header>
+    <div class="top_panel"></div>
+    <div class="topBar">
+        <div id="flag">
+            <div class="wave2"></div>
+            <div class="wave3"></div>
+        </div>
+        <div class="topBar_context">
+            <div>Кафедра неврологии</div>
+            <div>ФГБУ ДПО "Центральная государственная медицинская академия" УД Президента РФ</div>
+            <div>Официальный сайт</div>
+        </div>
+        <img style="margin: 20px" src="~/images/3-key.gif" height="80px" width="80px" alt="">
+    </div>
+</header>
 @RenderBody()
-
 </body>
 </html>
