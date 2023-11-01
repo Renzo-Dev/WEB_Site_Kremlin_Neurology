@@ -8,7 +8,12 @@
 <body>
 <link rel="stylesheet" href="~/styles/layout.css">
 <header>
-    <div class="top_panel"></div>
+    <div class="top_panel">
+        <a asp-controller="Home" asp-action="Index">
+            <img src="~/images/alt_nav_home.gif" alt="Главная страница" title="Главная страница"/></a>
+        <a asp-controller="Home" asp-action="Index">
+            <img src="~/images/alt_nav_map.gif" alt="Карта сайта" title="Карта сайта"/></a>
+    </div>
     <div class="topBar">
         <div id="flag">
             <div class="wave2"></div>
@@ -19,7 +24,7 @@
             <div>ФГБУ ДПО "Центральная государственная медицинская академия" УД Президента РФ</div>
             <div>Официальный сайт</div>
         </div>
-        <img style="margin: 20px" src="~/images/3-key.gif" height="80px" width="80px" alt="">
+        <img style="margin: 20px" src="~/images/Upravlenie-Delami-Presidenta-Gerb.svg" height="80px" width="80px" alt="">
     </div>
 </header>
 @RenderBody()

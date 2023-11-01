@@ -14,17 +14,33 @@ body,html {
 
 header {
     width: 100vw;
+    height: fit-content;
     display: flex;
     flex-direction: column;
     border-bottom: 2px solid red;
 }
 
 .top_panel {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
     will-change: auto;
     background: #004d83;
     width: fit-content;
     min-width: 100vw;
     height: 25px;
+}
+
+.top_panel > a {
+    white-space: nowrap;
+    text-decoration: none;
+    color: white;
+    transition: 300ms ease-out;
+}
+
+.top_panel > a:hover {
+    background: rgb(128, 128, 128);
 }
 
 .topBar {
@@ -39,7 +55,7 @@ header {
     justify-content: center;
     align-items: center;
     color: black;
-    font-size: 23px;
+    font-size: 20px;
     text-align: center;
     white-space: break-spaces;
     font-family: var(--beautifulFont);
@@ -47,6 +63,8 @@ header {
 
 .topBar_context > div:nth-child(1){
     font-weight: 600;
+    font-family: Bahnschrift,serif;
+    font-size: 27px;
 }
 
 .topBar_context > div:nth-child(3),.topBar_context>div:nth-child(2){
@@ -54,6 +72,7 @@ header {
 }
 
 #flag{
+    border: 1px solid #9b9b9b;
     min-width: 100px;
     min-height: 100px;
     position: relative;
