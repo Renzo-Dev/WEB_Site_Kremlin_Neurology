@@ -13,66 +13,139 @@ body,html {
 }
 
 header {
+    user-select: none;
     width: 100vw;
     height: fit-content;
     display: flex;
     flex-direction: column;
-    border-bottom: 2px solid red;
+    border-bottom: 2px solid #b2b2b2;
 }
 
-.top_panel {
+.top_nav_panel {
+    height: 45px;
+    width: 100vw;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: flex-end;
-    will-change: auto;
-    background: #004d83;
-    width: fit-content;
-    min-width: 100vw;
-    height: 25px;
+    justify-content: center;
+    border-top: 2px solid #c5c5c5;
 }
 
-.top_panel > a {
+.top_nav_panel > a {
     white-space: nowrap;
+    max-height: 45px;
+    text-align: center;
+    margin: 0 10px;
+    padding: 1vmin;
+    font-size: 20px;
+    font-family: Monospaced, serif ;
     text-decoration: none;
-    color: white;
-    transition: 300ms ease-out;
+    color: black;
+    transition: 180ms ease-in-out;
 }
 
-.top_panel > a:hover {
-    background: rgb(128, 128, 128);
+.top_nav_panel > a:hover {
+    border-radius: 4px;
+    background: #e2e2e2;
 }
 
 .topBar {
+    background: #d9effc;
     display: flex;
     flex-direction: row;
+    width: 100vw;
 }
 
-.topBar_context {
-    width: 100%;
+.topBar > img {
+    margin-left: auto;
+    margin-right: 20px;
+    align-self: center;
+    justify-self: flex-end;
+}
+
+.topBarContext {
+    margin-left: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    margin-top: 10px;
+    font-size: 27px;
+    font-family: Calibri,serif;
+    font-weight: 600;
+}
+
+.topBarContext > a {
+    color: black;
+    text-decoration: none;
+    transition: 150ms color ease-in-out;
+    border: none;
+}
+
+.topBarContext > a:hover {
+    color: #8c8c8c;
+}
+
+.topBarContext > a > div:nth-child(1) {
+    font-size: 25px;
+    font-family: Calibri, serif;
+    font-weight: 500;
+}
+
+/* Стили для кнопки и выпадающего списка */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    white-space: nowrap;
+    background: none;
+    text-align: center;
+    padding: 10px;
+    font-size: 20px;
+    font-family: Monospaced, serif ;
+    text-decoration: none;
+    color: black;
+    border: none;
+    cursor: pointer;
+    transition: 150ms ease-out;
+}
+
+.dropbtn:hover {
+    background: #e2e2e2;
+}
+
+.dropdown-content {
+    margin-top: 5px;
+    display: none;
+    border-radius: 13px;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    border-top: 1px solid #b2b2b2;
+}
+
+/* Стили для ссылок в выпадающем списке */
+.dropdown-content a {
+    border-radius: 7px;
     color: black;
     font-size: 20px;
-    text-align: center;
-    white-space: break-spaces;
-    font-family: var(--beautifulFont);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
 }
 
-.topBar_context > div:nth-child(1){
-    font-weight: 600;
-    font-family: Bahnschrift,serif;
-    font-size: 27px;
+.dropdown-content a:hover {
+    background: #c6c6c6;
 }
 
-.topBar_context > div:nth-child(3),.topBar_context>div:nth-child(2){
-    font-family: var(--beautifulFont);
+    /* Изменение стилей при наведении курсора на кнопку */
+.dropdown:hover .dropdown-content {
+    display: block;
 }
 
 #flag{
-    border: 1px solid #9b9b9b;
+    border: 1px solid #c6c6c6;
     min-width: 100px;
     min-height: 100px;
     position: relative;
@@ -107,3 +180,4 @@ header {
         transform: rotate(360deg);
     }
 }
+

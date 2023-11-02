@@ -4,29 +4,71 @@
 <html>
 <head>
     <title>@ViewData["Title"]</title>
+    <link rel="icon" href="~/images/favicon.ico" type="image/x-icon"/>
 </head>
 <body>
 <link rel="stylesheet" href="~/styles/layout.css">
 <header>
-    <div class="top_panel">
-        <a asp-controller="Home" asp-action="Index">
-            <img src="~/images/alt_nav_home.gif" alt="Главная страница" title="Главная страница"/></a>
-        <a asp-controller="Home" asp-action="Index">
-            <img src="~/images/alt_nav_map.gif" alt="Карта сайта" title="Карта сайта"/></a>
-    </div>
     <div class="topBar">
         <div id="flag">
             <div class="wave2"></div>
             <div class="wave3"></div>
         </div>
-        <div class="topBar_context">
-            <div>Кафедра неврологии</div>
-            <div>ФГБУ ДПО "Центральная государственная медицинская академия" УД Президента РФ</div>
-            <div>Официальный сайт</div>
+        <div class="topBarContext">
+            <a asp-controller="Home" asp-action="Index">
+                <div>Кафедра неврологии Официальный сайт</div>
+                <div>ФГБУ ДПО "Центральная государственная медицинская академия" УД Президента РФ</div>
+            </a>
         </div>
-        <img style="margin: 20px" src="~/images/Upravlenie-Delami-Presidenta-Gerb.svg" height="80px" width="80px" alt="">
+        <img src="~/images/Upravlenie-Delami-Presidenta-Gerb.svg" width="100px" height="100px" alt=""/>
+    </div><div class="top_nav_panel">
+        <a href="#">Обучение</a>
+        <a href="#">История</a>
+        <a href="#">Научная работа</a>
+        <a href="#">Клинические базы</a>
+        <a href="#">Библиотека</a>
+        <div class="dropdown">
+            <button class="dropbtn">Ежегодные конференции <span style="font-size: 14px;color: #636363">▼</span></button>
+            <div class="dropdown-content">
+                <a href="#">Научно-практическая конференция "Инновационные технологии в области неврологии и смежных специальностей"</a>
+                <a href="#">Научно-образовательная конферения "Неврологическик образовательные университеты"</a>
+            </div>
+        </div>
+        <a href="#">Научный кружок "Школа молодых неврологов"</a>
+        <a href="#">Новости и объявления</a>
+        <a href="#">Контактная информация</a>
     </div>
 </header>
 @RenderBody()
+<script>
+var dropdown = document.querySelector('.dropdown');
+var dropdownContent = document.querySelector('.dropdown-content');
+var dropbtn = document.querySelector('.dropbtn');
+var closeTimeout;
+
+dropdown.addEventListener('mouseenter', function() {
+  clearTimeout(closeTimeout); // Сбросить таймер закрытия
+  dropdownContent.style.display = 'block';
+});
+
+dropdown.addEventListener('mouseleave', function() {
+  // Устанавливаем таймер на закрытие через 500 миллисекунд (по умолчанию)
+  closeTimeout = setTimeout(function() {
+    dropdownContent.style.display = 'none';
+  }, 500);
+});
+
+// Отменяем закрытие, если курсор мыши попадает на выпадающий список
+dropdownContent.addEventListener('mouseenter', function() {
+  clearTimeout(closeTimeout);
+});
+
+// Устанавливаем таймер на закрытие при уходе с выпадающего списка
+dropdownContent.addEventListener('mouseleave', function() {
+  closeTimeout = setTimeout(function() {
+    dropdownContent.style.display = 'none';
+  }, 500);
+});
+</script>
 </body>
 </html>

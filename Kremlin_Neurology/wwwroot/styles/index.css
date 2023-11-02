@@ -1,61 +1,8 @@
-.left_nav_panel {
+main {
     user-select: none;
-    border-right: 2px solid #c3c3c3;
-    width: 190px;
-    height: 788px;
-    overflow-y: auto;
-    overflow-x: hidden;
-    min-height: 500px;
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding-right: 10px;
 }
 
-.left_nav_panel > a {
-    padding-left: 5px;
-    padding-right: 5px;
-    margin: 7px 0;
-    font-size: 20px;
-    text-decoration: none;
-    color: black;
-    width: 100%;
-    border-bottom: 1px solid transparent;
-    transition: border-bottom 0.3s ease-in-out, color 0.3s ease-in-out;
-}
-
-.left_nav_panel > a:hover {
-    border-bottom: 2px solid black;
-    color: #2288ff;
-}
-
-.left_nav_panel > a > div {
-    font-family: Calibri,serif;
-    width: 100%;
-    white-space: normal;
-    text-align: left;
-}
-
-::-webkit-scrollbar {
-    width: 7px;
-}
-
-::-webkit-scrollbar-thumb {
-    background-color: #adadad;
-    border-radius: 5px;
-}
-
-::-webkit-scrollbar-track {
-    background-color: #f0f0f0;
-}
-
-::-webkit-scrollbar-button {
-    display: none;
-}
-
-::-webkit-scrollbar-corner {
-    background-color: transparent;
-}
-::-webkit-scrollbar-thumb:hover {
-    background-color: #555555;
+main > img {
+    
 }
