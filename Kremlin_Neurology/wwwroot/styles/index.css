@@ -14,10 +14,10 @@ main {
 }
 
 .diploma:hover {
-    transform: translate(-150px,50px) scale(170%);
+    transform: translate(-150px, 50px) scale(170%);
 }
 
-body{
+body {
     background-color: #f3f3f3;
 }
 
@@ -50,7 +50,7 @@ body{
     width: 96%;
 }
 
-.teachersInfo > div:first-child{
+.teachersInfo > div:first-child {
     font-size: 20px;
 }
 
@@ -63,6 +63,7 @@ body{
     display: flex;
     flex-direction: row;
 }
+
 .teachersInfo > div:last-child > fieldset {
     display: flex;
     flex-direction: column;
@@ -119,7 +120,8 @@ legend {
 }
 
 .teachersInfo > div:last-child > ul {
-    margin-right: 50px;box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2) inset;
+    margin-right: 50px;
+    box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2) inset;
     padding: 10px;
     overflow-y: auto;
     height: 240px;
@@ -132,6 +134,7 @@ legend {
 .teachersInfo > div:last-child > ul > li > a:hover {
     color: #3e5eff;
 }
+
 .teachersInfo > div:last-child > ul > li > a {
     transition: 200ms color ease-out;
     text-decoration: none;
