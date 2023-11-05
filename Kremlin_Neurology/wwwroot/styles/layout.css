@@ -1,21 +1,27 @@
-﻿:root{
-    --beautifulFont:  "Verdana",serif;
+﻿:root {
+    --beautifulFont: "Verdana", serif;
 }
 
-*,*:after,*:before {
+*,
+*::after,
+*::before {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-body,html {
-    height: 100vh;
+body,
+html {
+    height: 100%;
     width: 100%;
+    font-family: var(--beautifulFont), serif;
 }
 
 header {
     user-select: none;
     width: 100vw;
     height: fit-content;
+    display: -webkit-flex; /* Для старых версий Safari */
     display: flex;
     flex-direction: column;
     border-bottom: 2px solid #b2b2b2;
@@ -38,19 +44,20 @@ header {
     margin: 0 10px;
     padding: 1vmin;
     font-size: 20px;
-    font-family: Monospaced, serif ;
+    font-family: Monospaced, serif;
     text-decoration: none;
     color: black;
-    transition: 180ms ease-in-out;
+    transition: background 180ms ease-in-out;
 }
 
 .top_nav_panel > a:hover {
     border-radius: 4px;
-    background: #e2e2e2;
+    background: #cecece;
 }
 
 .topBar {
     background: #d9effc;
+    display: -webkit-flex; /* Для старых версий Safari */
     display: flex;
     flex-direction: row;
     width: 100vw;
@@ -59,7 +66,9 @@ header {
 .topBar > img {
     margin-left: auto;
     margin-right: 20px;
+    -webkit-align-self: center; /* Для старых версий Safari */
     align-self: center;
+    -webkit-justify-self: flex-end; /* Для старых версий Safari */
     justify-self: flex-end;
 }
 
@@ -69,14 +78,14 @@ header {
     flex-direction: column;
     margin-top: 10px;
     font-size: 27px;
-    font-family: Calibri,serif;
+    font-family: Calibri, serif;
     font-weight: 600;
 }
 
 .topBarContext > a {
     color: black;
     text-decoration: none;
-    transition: 150ms color ease-in-out;
+    transition: color 150ms ease-in-out;
     border: none;
 }
 
@@ -84,7 +93,7 @@ header {
     color: #8c8c8c;
 }
 
-.topBarContext > a > div:nth-child(1) {
+.topBarContext > a > div:first-child {
     font-size: 25px;
     font-family: Calibri, serif;
     font-weight: 500;
@@ -102,16 +111,16 @@ header {
     text-align: center;
     padding: 10px;
     font-size: 20px;
-    font-family: Monospaced, serif ;
+    font-family: Monospaced, serif;
     text-decoration: none;
     color: black;
     border: none;
     cursor: pointer;
-    transition: 150ms ease-out;
+    transition: background 150ms ease-out;
 }
 
 .dropbtn:hover {
-    background: #e2e2e2;
+    background: #cecece;
 }
 
 .dropdown-content {
@@ -139,12 +148,12 @@ header {
     background: #c6c6c6;
 }
 
-    /* Изменение стилей при наведении курсора на кнопку */
+/* Изменение стилей при наведении курсора на кнопку */
 .dropdown:hover .dropdown-content {
     display: block;
 }
 
-#flag{
+#flag {
     border: 1px solid #c6c6c6;
     min-width: 100px;
     min-height: 100px;
@@ -157,22 +166,23 @@ header {
     overflow: hidden;
 }
 
-.wave2{
+.wave2, .wave3 {
     left: -50%;
-    top: 30%;
-    background-color: blue;
-}
-.wave3{
-    left: -50%;
-    top: 66%;
-    background-color: red;
-}
-.wave2, .wave3{
     position: absolute;
     width: 200%;
     height: 200%;
     border-radius: 45%;
     animation: wave 10s linear infinite;
+}
+
+.wave2 {
+    top: 30%;
+    background-color: blue;
+}
+
+.wave3 {
+    top: 66%;
+    background-color: red;
 }
 
 @keyframes wave {
@@ -181,3 +191,21 @@ header {
     }
 }
 
+/* Стили для скроллбара */
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 7px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 7px;
+}
