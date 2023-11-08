@@ -17,10 +17,6 @@ main {
     transform: translate(-150px, 50px) scale(170%);
 }
 
-body {
-    background-color: #f3f3f3;
-}
-
 .main__content {
     font-family: 'Varela', sans-serif;
     font-size: 20px;
@@ -162,7 +158,7 @@ legend {
 }
 
 .info__text > div {
-    transition: 150ms all ease-out;
+    transition: 180ms all ease-out;
 }
 
 .info__text > div:hover {
@@ -179,13 +175,4 @@ legend {
 
 .info__text > div:last-child {
     margin-top: 30px;
-}
-
-footer {
-    font-family: Calibri, serif;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    padding: 10px;
-    text-align: center;
 }

@@ -7,19 +7,20 @@
 *::before {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: content-box;
 }
 
 body,
 html {
     height: 100%;
-    width: 100%;
+    width: 100vw;
+    min-width: 1000px;
     font-family: var(--beautifulFont), serif;
 }
 
 header {
     user-select: none;
-    width: 100vw;
+    min-width: 100vw;
     height: fit-content;
     display: -webkit-flex; /* Для старых версий Safari */
     display: flex;
@@ -28,12 +29,15 @@ header {
 }
 
 .top_nav_panel {
-    height: 45px;
-    width: 100vw;
+    background-color: #ededed;
+    height: 53px;
+    max-height: 59px;
+    width: 100%;
+    overflow-y: auto;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     border-top: 2px solid #c5c5c5;
 }
 
@@ -50,7 +54,7 @@ header {
     transition: background 180ms ease-in-out;
 }
 
-.top_nav_panel > a:hover {
+.top_nav_panel > a:hover, .dropbtn:hover {
     border-radius: 4px;
     background: #cecece;
 }
@@ -60,7 +64,7 @@ header {
     display: -webkit-flex; /* Для старых версий Safari */
     display: flex;
     flex-direction: row;
-    width: 100vw;
+    width: 100%;
 }
 
 .topBar > img {
@@ -107,7 +111,6 @@ header {
 
 .dropbtn {
     white-space: nowrap;
-    background: none;
     text-align: center;
     padding: 10px;
     font-size: 20px;
@@ -119,18 +122,15 @@ header {
     transition: background 150ms ease-out;
 }
 
-.dropbtn:hover {
-    background: #cecece;
-}
-
 .dropdown-content {
     margin-top: 5px;
     display: none;
+    width: 300px;
     border-radius: 13px;
-    position: absolute;
+    position: fixed;
     background-color: #f9f9f9;
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
     border-top: 1px solid #b2b2b2;
 }
 
@@ -146,11 +146,6 @@ header {
 
 .dropdown-content a:hover {
     background: #c6c6c6;
-}
-
-/* Изменение стилей при наведении курсора на кнопку */
-.dropdown:hover .dropdown-content {
-    display: block;
 }
 
 #flag {
@@ -193,12 +188,13 @@ header {
 
 /* Стили для скроллбара */
 ::-webkit-scrollbar {
-    width: 7px;
+    width: 5px;
+    height: 6px;
 }
 
 ::-webkit-scrollbar-thumb {
     background: #888;
-    border-radius: 7px;
+    border-radius: 13px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -208,4 +204,20 @@ header {
 ::-webkit-scrollbar-track {
     background: #f1f1f1;
     border-radius: 7px;
+}
+
+hr {
+    position: fixed;
+    bottom: 32px;
+    width: 100%;
+}
+
+footer {
+    white-space: nowrap;
+    font-family: Calibri, serif;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
 }

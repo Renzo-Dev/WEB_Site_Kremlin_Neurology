@@ -41,25 +41,28 @@
     </div>
 </header>
 @RenderBody()
+<hr/>
+<footer>Авторские права © 2010-2023 Кафедра неврологии ФГБУ ДПО "Центральная государственная медицинская академия" УД Президента РФ</footer>
+
+
 <script>
-document.addEventListener('onload',()=>{
-    alert("HELLO");
-});
-var dropdown = document.querySelector('.dropdown');
-var dropdownContent = document.querySelector('.dropdown-content');
-var dropbtn = document.querySelector('.dropbtn');
-var closeTimeout;
+let dropdown = document.querySelector('.dropdown');
+let dropdownContent = document.querySelector('.dropdown-content');
+let dropbtn = document.querySelector('.dropbtn');
+let closeTimeout;
 
 dropdown.addEventListener('mouseenter', function() {
   clearTimeout(closeTimeout); // Сбросить таймер закрытия
   dropdownContent.style.display = 'block';
+  dropdownContent.style.top = dropbtn.getBoundingClientRect().top+55 + 'px';
+  dropdownContent.style.left = dropbtn.getBoundingClientRect().left-20 + 'px';
 });
 
 dropdown.addEventListener('mouseleave', function() {
-  // Устанавливаем таймер на закрытие через 500 миллисекунд (по умолчанию)
+  // Устанавливаем таймер на закрытие через 200 миллисекунд (по умолчанию)
   closeTimeout = setTimeout(function() {
     dropdownContent.style.display = 'none';
-  }, 500);
+  }, 200);
 });
 
 // Отменяем закрытие, если курсор мыши попадает на выпадающий список
@@ -71,7 +74,7 @@ dropdownContent.addEventListener('mouseenter', function() {
 dropdownContent.addEventListener('mouseleave', function() {
   closeTimeout = setTimeout(function() {
     dropdownContent.style.display = 'none';
-  }, 500);
+  }, 200);
 });
 </script>
 </body>
