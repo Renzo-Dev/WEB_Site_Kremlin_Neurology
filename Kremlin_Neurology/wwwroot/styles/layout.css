@@ -84,6 +84,7 @@ header {
 }
 
 .top_nav_panel > a {
+    width: 451px;
     background-color: green;
     text-align: center;
     white-space: nowrap;

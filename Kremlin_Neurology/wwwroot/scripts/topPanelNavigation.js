@@ -11,58 +11,48 @@ document.addEventListener('DOMContentLoaded',()=> {
     let topPanelContext = document.querySelector('.top_nav_panel');
 
     window.addEventListener('resize', test);
-    
+
     test()
+
     function test() {
-        const topPanelWidth = topPanelContext.clientWidth; // ширина top panel
+        while (topPanelContext.firstChild) {
+            topPanelContext.removeChild(topPanelContext.firstChild);
+        }
+        let topPanelWidth = topPanelContext.clientWidth; // ширина top panel
         let numberOfElements; // количество элементов в top_panel
 
-        PanelItems.forEach(item => {
-            console.log(`Слово: ${item}`)
+        for (let i = 0; i < PanelItems.length; i++) {
             let size = 0;
-            for (let i =0;i<item.length;i++)
-            {
-                size += 17;
+            for (let r = 0; r < PanelItems[i].length; r++) {
+                size += 10;
             }
-            console.log(`Размер слова: ${size} px`);
-        });
+            topPanelWidth -= size;
+            if (topPanelWidth > 600) {
+                const element = document.createElement('a');
+                if (PanelItems[i] !== 'Ежегодные конференции') {
+                    element.setAttribute('href', '#');
+                }
+                element.textContent = PanelItems[i];
+                topPanelContext.appendChild(element);
+            } else {
+                return;
+            }
+            console.log(topPanelWidth)
+        }
     }
+});
     
     
     
     
-    // test();
-    //
-    // function test(index = 0) {
-    //     // определяем количество элементов в зависимости от ширины экрана
-    //     const screenWidth = window.innerWidth;
-    //     let numberOfElements; // количество элементов в top_panel
-    //
-    //     if (screenWidth < 480) {
-    //         numberOfElements = 3;
-    //     } else if (screenWidth < 1190) {
-    //         numberOfElements = 4;
-    //     } else if (screenWidth < 1190) {
-    //         numberOfElements = 5;
-    //     } else if (screenWidth < 1700) {
-    //         numberOfElements = 6;
-    //     } else if (screenWidth < 1800) {
-    //         numberOfElements = 7;
-    //     } else if (screenWidth < 1950) {
-    //         numberOfElements = 8;
-    //     } else {
-    //         numberOfElements = 9;
-    //     }
-    //
-    //     while (topPanelContext.firstChild) {
-    //         topPanelContext.removeChild(topPanelContext.firstChild);
-    //     }
+
+    
     //
     //     let tPanelItems = 0; // количество элементов в top_panel
     //
     //     // добавляем элементы в top_panel
     //     for (; tPanelItems < numberOfElements; tPanelItems++) {
-    //         const element = document.createElement('a');
+    //     //         const element = document.createElement('a');
     //         if (topPanelItems[tPanelItems + index] !== 'Ежегодные конференции') {
     //             element.setAttribute('href', '#');
     //         }
@@ -90,4 +80,3 @@ document.addEventListener('DOMContentLoaded',()=> {
     //         });
     //     }
     // }
-});
