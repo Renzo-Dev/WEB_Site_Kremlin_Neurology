@@ -14,40 +14,34 @@ document.addEventListener('DOMContentLoaded',()=> {
 
     test()
 
-    function test() {
+    
+    function test(sIndex = 0) {
         while (topPanelContext.firstChild) {
             topPanelContext.removeChild(topPanelContext.firstChild);
         }
         let topPanelWidth = topPanelContext.clientWidth; // ширина top panel
-        let numberOfElements; // количество элементов в top_panel
-
-        for (let i = 0; i < PanelItems.length; i++) {
+        // let numberOfElements; // количество элементов в top_panel
+        let tPanelItems = 0; // количество элементов в top_panel
+        
+        for (; tPanelItems < PanelItems.length; tPanelItems++) {
             let size = 0;
-            for (let r = 0; r < PanelItems[i].length; r++) {
+            for (let r = 0; r < PanelItems[tPanelItems].length; r++) {
                 size += 10;
             }
             topPanelWidth -= size;
             if (topPanelWidth > 600) {
                 const element = document.createElement('a');
-                if (PanelItems[i] !== 'Ежегодные конференции') {
+                if (PanelItems[tPanelItems] !== 'Ежегодные конференции') {
                     element.setAttribute('href', '#');
                 }
-                element.textContent = PanelItems[i];
+                element.textContent = PanelItems[tPanelItems];
                 topPanelContext.appendChild(element);
             } else {
                 return;
             }
-            console.log(topPanelWidth)
         }
     }
 });
-    
-    
-    
-    
-
-    
-    //
     //     let tPanelItems = 0; // количество элементов в top_panel
     //
     //     // добавляем элементы в top_panel
