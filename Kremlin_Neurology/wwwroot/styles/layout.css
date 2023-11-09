@@ -14,7 +14,7 @@ body,
 html {
     height: 100%;
     width: 100vw;
-    min-width: 1000px;
+    min-width: 200px;
     font-family: var(--beautifulFont), serif;
 }
 
@@ -28,23 +28,66 @@ header {
     border-bottom: 2px solid #b2b2b2;
 }
 
-.top_nav_panel {
+.top_panel {
     background-color: #ededed;
     height: 53px;
     max-height: 59px;
     width: 100%;
-    overflow-y: auto;
+    min-width: 300px;
+    overflow-y: hidden;
+    overflow-x: hidden;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     border-top: 2px solid #c5c5c5;
 }
 
+.bRight,.bLeft {
+    z-index: 99999;
+    visibility: visible;
+    color: #383838;
+    font-size: 35px;
+    border: none;
+    outline: none;
+    transition: 200ms all ease-out;
+}
+
+.bRight:hover,.bLeft:hover{
+    color: #000000;
+}
+
+.bRight:active,.bLeft:active{
+    color: #adadad;
+}
+
+.bRight {
+    margin-left: auto;
+    margin-right: 30px;
+}
+
+.bLeft {
+    margin-right: auto;
+    margin-left: 30px;
+}
+
+.top_nav_panel {
+    width: 85%;
+    height: inherit;
+    background-color: red;
+    overflow: hidden;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
 .top_nav_panel > a {
+    background-color: green;
+    text-align: center;
     white-space: nowrap;
     max-height: 45px;
-    text-align: center;
     margin: 0 10px;
     padding: 1vmin;
     font-size: 20px;
@@ -54,7 +97,7 @@ header {
     transition: background 180ms ease-in-out;
 }
 
-.top_nav_panel > a:hover, .dropbtn:hover {
+.top_nav_panel > a:hover {
     border-radius: 4px;
     background: #cecece;
 }
@@ -103,32 +146,13 @@ header {
     font-weight: 500;
 }
 
-/* Стили для кнопки и выпадающего списка */
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-.dropbtn {
-    white-space: nowrap;
-    text-align: center;
-    padding: 10px;
-    font-size: 20px;
-    font-family: Monospaced, serif;
-    text-decoration: none;
-    color: black;
-    border: none;
-    cursor: pointer;
-    transition: background 150ms ease-out;
-}
-
 .dropdown-content {
     margin-top: 5px;
     display: none;
     width: 300px;
     border-radius: 13px;
     position: fixed;
-    background-color: #f9f9f9;
+    background-color: #efefef;
     min-width: 160px;
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
     border-top: 1px solid #b2b2b2;
@@ -220,4 +244,20 @@ footer {
     width: 100%;
     padding: 10px;
     text-align: center;
+}
+
+.anim {
+    animation-duration: 700ms;
+    animation-timing-function: ease-in-out;
+    animation-name: slidein;
+    animation-fill-mode: forwards;
+}
+
+@keyframes slidein {
+    from  {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-120px);
+    }
 }

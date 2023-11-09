@@ -22,60 +22,15 @@
         </div>
         <img src="~/images/Upravlenie-Delami-Presidenta-Gerb.svg" width="100px" height="100px" alt=""/>
     </div>
-    <div class="top_nav_panel">
-        <a href="#">Обучение</a>
-        <a href="#">История</a>
-        <a href="#">Научная работа</a>
-        <a href="#">Клинические базы</a>
-        <a href="#">Библиотека</a>
-        <div class="dropdown">
-            <button class="dropbtn">Ежегодные конференции <span style="font-size: 14px;color: #636363">▼</span></button>
-            <div class="dropdown-content">
-                <a href="#">Научно-практическая конференция "Инновационные технологии в области неврологии и смежных специальностей"</a>
-                <a href="#">Научно-образовательная конферения "Неврологическик образовательные университеты"</a>
-            </div>
-        </div>
-        <a href="#">Научный кружок "Школа молодых неврологов"</a>
-        <a href="#">Новости и объявления</a>
-        <a href="#">Контактная информация</a>
+    <div class="top_panel">
+        <button class="bLeft">&#11164;</button>
+        <div class="top_nav_panel"><a></a></div>
+        <button class="bRight">&#11166;</button>
     </div>
 </header>
 @RenderBody()
 <hr/>
 <footer>Авторские права © 2010-2023 Кафедра неврологии ФГБУ ДПО "Центральная государственная медицинская академия" УД Президента РФ</footer>
-
-
-<script>
-let dropdown = document.querySelector('.dropdown');
-let dropdownContent = document.querySelector('.dropdown-content');
-let dropbtn = document.querySelector('.dropbtn');
-let closeTimeout;
-
-dropdown.addEventListener('mouseenter', function() {
-  clearTimeout(closeTimeout); // Сбросить таймер закрытия
-  dropdownContent.style.display = 'block';
-  dropdownContent.style.top = dropbtn.getBoundingClientRect().top+55 + 'px';
-  dropdownContent.style.left = dropbtn.getBoundingClientRect().left-20 + 'px';
-});
-
-dropdown.addEventListener('mouseleave', function() {
-  // Устанавливаем таймер на закрытие через 200 миллисекунд (по умолчанию)
-  closeTimeout = setTimeout(function() {
-    dropdownContent.style.display = 'none';
-  }, 200);
-});
-
-// Отменяем закрытие, если курсор мыши попадает на выпадающий список
-dropdownContent.addEventListener('mouseenter', function() {
-  clearTimeout(closeTimeout);
-});
-
-// Устанавливаем таймер на закрытие при уходе с выпадающего списка
-dropdownContent.addEventListener('mouseleave', function() {
-  closeTimeout = setTimeout(function() {
-    dropdownContent.style.display = 'none';
-  }, 200);
-});
-</script>
+<script src="~/scripts/topPanelNavigation.js"></script>
 </body>
 </html>
