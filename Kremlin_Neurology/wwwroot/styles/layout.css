@@ -14,8 +14,10 @@ body,
 html {
     height: 100%;
     width: 100vw;
-    min-width: 200px;
+    min-width: 400px;
     font-family: var(--beautifulFont), serif;
+    overflow-x: auto;
+    overflow-y: auto;
 }
 
 header {
@@ -244,6 +246,7 @@ footer {
     bottom: 0;
     width: 100%;
     padding: 10px;
+    margin: 0 auto;
     text-align: center;
 }
 

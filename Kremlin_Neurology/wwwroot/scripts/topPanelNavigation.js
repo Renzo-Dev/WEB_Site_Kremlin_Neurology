@@ -10,12 +10,10 @@ document.addEventListener('DOMContentLoaded',()=> {
     // получаем top_nav_panel
     let topPanelContext = document.querySelector('.top_nav_panel');
 
-    window.addEventListener('resize', test);
-
-    test()
-
+    window.addEventListener('resize', renderTopPanel);
+    renderTopPanel();
     
-    function test(sIndex = 0) {
+    function renderTopPanel(sIndex = 0) {
         while (topPanelContext.firstChild) {
             topPanelContext.removeChild(topPanelContext.firstChild);
         }
@@ -29,7 +27,8 @@ document.addEventListener('DOMContentLoaded',()=> {
                 size += 10;
             }
             topPanelWidth -= size;
-            if (topPanelWidth > 600) {
+            if (topPanelWidth > 400) {
+                console.error(topPanelWidth)
                 const element = document.createElement('a');
                 if (PanelItems[tPanelItems] !== 'Ежегодные конференции') {
                     element.setAttribute('href', '#');
