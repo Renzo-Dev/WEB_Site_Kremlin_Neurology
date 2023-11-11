@@ -81,7 +81,7 @@ header {
 .top_nav_panel {
     width: 85%;
     height: inherit;
-    overflow: hidden;
+    overflow: visible;
     position: absolute;
     display: flex;
     flex-direction: row;
@@ -93,7 +93,7 @@ header {
 .top_nav_panel > a, .top_nav_panel > div {
     background-color: #d8d8d8;
     border-radius: 7px;
-    width: 451px;
+    width: 460px;
     text-align: center;
     white-space: nowrap;
     max-height: 45px;
@@ -142,6 +142,7 @@ header {
     font-size: 27px;
     font-family: Calibri, serif;
     font-weight: 600;
+    justify-content: center;
 }
 
 .topBarContext > a {
