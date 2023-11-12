@@ -1,7 +1,6 @@
 "use strict";
 
 document.addEventListener('DOMContentLoaded', () => {
-
     // Массив с элементами верхней панели
     const panelElements = [
         "Обучение", "История", "Научная работа",
@@ -12,30 +11,94 @@ document.addEventListener('DOMContentLoaded', () => {
     // Ссылка на верхнюю навигационную панель
     let topNavPanel = document.querySelector('.top_nav_panel');
 
+    // Переменные для отслеживания начального индекса и количества элементов в top_nav_panel
+    let startIndex = 0;
+    let navItemsCount = 0;
+
+    // Ссылки на кнопки "влево" и "вправо"
+    let bLeft = document.getElementById('bLeft');
+    let bRight = document.getElementById('bRight');
+
     // Обработчик события изменения размеров окна
-    window.addEventListener('resize', () => {
-        adjustPanel();
+    window.addEventListener('resize', resizeNav);
+
+    // Обработчик события щелчка по кнопке "влево"
+    bLeft.addEventListener('click', () => {
+        handleNavigationClick('left');
     });
 
-    // Переменная для отслеживания начального индекса для panelElements
-    let startIndex = 0;
-
     // Обработчик события щелчка по кнопке "вправо"
-    document.getElementById('bRight').addEventListener('click', () => {
-        startIndex++;
-        adjustPanel();
+    bRight.addEventListener('click', () => {
+        handleNavigationClick('right');
     });
 
     // Начальная настройка панели
-    adjustPanel();
+    resizeNav();
 
-    // Функция для корректировки верхней навигационной панели в зависимости от размера окна
-    function adjustPanel() {
-        // Получаем ширину верхней панели
+    // Функция для обработки клика на кнопке навигации
+    function handleNavigationClick(direction) {
+        if ((direction === 'left' && startIndex > 0) ||
+            (direction === 'right' && navItemsCount + startIndex < panelElements.length)) {
+            animateNavigation(direction);
+            updateNavigationState(direction);
+        }
+    }
+
+    // Функция для анимации навигации
+    function animateNavigation(direction) {
+        const animationClass = direction === 'left' ? 'anim_left' : 'anim_right';
+
+        if (!topNavPanel.querySelector('a').classList.contains(animationClass)) {
+            topNavPanel.querySelectorAll('a').forEach(elem => {
+                elem.classList.add(animationClass);
+            });
+        } else {
+            topNavPanel.querySelectorAll('a').forEach(elem => {
+                elem.classList.remove('anim_right', 'anim_left');
+            });
+        }
+
+        setTimeout(() => {
+            topNavPanel.querySelectorAll('a').forEach(elem => {
+                elem.classList.remove('anim_right', 'anim_left');
+            });
+        }, 700);
+    }
+
+    // Функция для обновления состояния навигации
+    function updateNavigationState(direction) {
+        if (direction === 'left') {
+            startIndex--;
+        } else {
+            startIndex++;
+        }
+
+        // Обновляем видимость кнопок
+        updateButtonVisibility();
+
+        // Обновляем контекст панели
+        changeContext();
+    }
+
+    // Функция для обновления видимости кнопок
+    function updateButtonVisibility() {
+        bLeft.style.visibility = startIndex === 0 ? 'hidden' : 'visible';
+        bRight.style.visibility = startIndex + navItemsCount === panelElements.length ? 'hidden' : 'visible';
+    }
+
+    // Функция для изменения контекста
+    function changeContext() {
+        for (let i = startIndex; i < navItemsCount + startIndex; i++) {
+            topNavPanel.querySelectorAll('a')[i - startIndex].textContent = panelElements[i];
+        }
+    }
+
+    // Функция для изменения размеров навигационной панели
+    function resizeNav() {
         let topPanelWidth = topNavPanel.clientWidth;
+        let count = 0;
 
         // Считаем количество видимых элементов в зависимости от ширины
-        let count = 0;
         while (topPanelWidth > 150 && count < panelElements.length) {
             topPanelWidth -= 460;
             count++;
@@ -43,16 +106,33 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Убеждаемся, что startIndex находится в пределах допустимых значений
         if (count + startIndex <= panelElements.length) {
-            // Очищаем текущие элементы в панели
-            while (topNavPanel.firstChild) {
-                topNavPanel.removeChild(topNavPanel.firstChild);
-            }
+            // Обновляем количество элементов в top_nav_panel
+            updateNavItemCount(count);
 
-            // Создаем и добавляем элементы в панель
-            for (let i = startIndex; i < count + startIndex; i++) {
+            // Обновляем видимость кнопок
+            updateButtonVisibility();
+
+            // Обновляем контекст панели
+            changeContext();
+        }
+    }
+
+    // Функция для обновления количества элементов в зависимости от ширины в top_nav_panel
+    function updateNavItemCount(count) {
+        if (count > navItemsCount) {
+            for (let i = navItemsCount; i < count; i++) {
                 let elem = document.createElement('a');
-                elem.textContent = panelElements[i];
                 topNavPanel.appendChild(elem);
+                navItemsCount = count;
+            }
+        } else if (count < navItemsCount) {
+            for (let i = navItemsCount; i > count; i--) {
+                if (topNavPanel.firstChild) {
+                    topNavPanel.removeChild(topNavPanel.firstChild);
+                    navItemsCount = count;
+                } else {
+                    break;
+                }
             }
         }
     }

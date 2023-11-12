@@ -50,17 +50,21 @@ header {
 
 /* Стили для кнопок слева и справа в верхней панели */
 #bRight, #bLeft {
+    border: none;
+    padding: 0 5px;
+    border-radius: 45px;
     z-index: 99999;
-    visibility: visible;
+    visibility: hidden;
     color: #383838;
     font-size: 35px;
-    border: none;
+
     outline: none;
     transition: 200ms all ease-out;
 }
 
 #bRight:hover, #bLeft:hover {
     color: #000000;
+    cursor: pointer;
 }
 
 #bRight:active, #bLeft:active {
@@ -81,7 +85,7 @@ header {
 .top_nav_panel {
     width: 85%;
     height: inherit;
-    overflow: visible;
+    overflow: hidden;
     position: absolute;
     display: flex;
     flex-direction: row;
@@ -164,9 +168,10 @@ header {
 }
 
 @media screen and (min-width: 1920px) {
-    .topBarContext > a  {
+    .topBarContext > a {
         font-size: 30px;
     }
+
     .topBarContext > a > div:first-child {
         font-size: 23px;
     }
@@ -174,9 +179,10 @@ header {
 
 /* Стили для экранов WQHD (2560x1440) и выше */
 @media screen and (min-width: 2560px) {
-    .topBarContext > a  {
+    .topBarContext > a {
         font-size: 35px;
     }
+
     .topBarContext > a > div:first-child {
         font-size: 30px;
     }
@@ -187,6 +193,7 @@ header {
     .topBarContext > a {
         font-size: 40px;
     }
+
     .topBarContext > a > div:first-child {
         font-size: 35px;
     }
@@ -291,19 +298,61 @@ footer {
 }
 
 /* Анимация сдвига */
-.anim {
+.anim_right, .anim_left {
     animation-duration: 700ms;
-    animation-timing-function: ease-in-out;
-    animation-name: slidein;
+    animation-timing-function: linear;
+    animation-direction: alternate;
     animation-fill-mode: forwards;
 }
 
-/* Ключевые кадры для анимации сдвига */
-@keyframes slidein {
-    from  {
+.anim_right {
+    animation-name: right;
+}
+
+.anim_left {
+    animation-name: left;
+}
+
+@keyframes left {
+    0% {
+        transform: translateX(0);
+        opacity: 100%;
+    }
+    25% {
+        transform: translateX(400px);
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    75% {
+        transform: translateX(-400px);
+        opacity: 0
+    }
+    100% {
+        opacity: 100%;
         transform: translateX(0);
     }
-    to {
-        transform: translateX(-120px);
+}
+
+@keyframes right {
+    0% {
+        transform: translateX(0);
+        opacity: 100%;
+    }
+    25% {
+        transform: translateX(-400px);
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    75% {
+        transform: translateX(400px);
+        opacity: 0;
+    }
+    100% {
+        opacity: 100%;
+        transform: translateX(0);
     }
 }
