@@ -50,20 +50,20 @@ header {
 
 /* Стили для кнопок слева и справа в верхней панели */
 #bRight, #bLeft {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border: none;
     padding: 0 5px;
     border-radius: 45px;
     z-index: 99999;
     visibility: hidden;
-    color: #383838;
+    font-family: 'Arial', sans-serif; /* Замените 'Arial' на подходящий шрифт */
     font-size: 35px;
-
     outline: none;
-    transition: 200ms all ease-out;
 }
 
 #bRight:hover, #bLeft:hover {
-    color: #000000;
     cursor: pointer;
 }
 
@@ -74,6 +74,10 @@ header {
 #bRight {
     margin-left: auto;
     margin-right: 30px;
+}
+
+#bRight > img {
+    transform: rotate(180deg);
 }
 
 #bLeft {
@@ -98,6 +102,7 @@ header {
     background-color: #d8d8d8;
     border-radius: 7px;
     width: 460px;
+    min-width: fit-content;
     text-align: center;
     white-space: nowrap;
     max-height: 45px;
@@ -108,12 +113,6 @@ header {
     text-decoration: none;
     color: black;
     transition: background 180ms ease-in-out;
-}
-
-/* Стили для контекста в верхней навигационной панели */
-.top_nav_panel > div > span {
-    font-size: 18px;
-    color: #464646;
 }
 
 /* Изменение стилей при наведении на ссылки и блоки */
@@ -156,24 +155,163 @@ header {
     border: none;
 }
 
+.topBarContext > a > div:first-child {
+    font-weight: 500;
+}
+
 /* Стили для телефонов (предположим, что ширина телефона - 375px) */
 @media screen and (max-width: 767px) {
-    .topBarContext > a {
-        font-size: 18px;
+    #bLeft > img ,#bRight > img {
+        user-select: none;
+        width: 17px;
+        height: 17px;
     }
 
+    #bRight {
+        margin-right: 10%;
+    }
+
+    #bLeft {
+        margin-left: 10%;
+    }
+
+    .topBar > img {
+        width: 50px;
+        height: 50px;
+        position: relative;
+        left: 7px;
+    }
+
+    .topBar {
+        align-items: center;
+        padding-bottom: 10px;
+    }
+
+    .topBarContext{
+        margin-left: auto;
+    }
+
+    .topBarContext > a , .topBarContext > div {
+        text-align: center;
+    }
+
+    .topBarContext > a {
+        font-size: 13px;
+        font-weight: 550;
+    }
     .topBarContext > a > div:first-child {
-        font-size: 16px;
+        font-size: 12px;
+    }
+
+    /* Стили для верхней панели */
+    .top_panel {
+        height: 27px;
+    }
+
+    /* Стили для верхней навигационной панели */
+    .top_nav_panel {
+        width: 75%;
+    }
+
+    /* Стили для ссылок и блоков в верхней навигационной панели */
+    .top_nav_panel > a, .top_nav_panel > div {
+        border-radius: 10px;
+        max-width: 250px;
+        min-width: fit-content;
+        font-size: 13px;
+    }
+
+    #flag {
+        min-width: 50px;
+        min-height: 50px;
+
+        width: 50px;
+        height: 50px;
+    }
+
+    footer {
+        width: 90vw;
+        white-space: normal;
+        font-size: 7px;
     }
 }
 
 @media screen and (min-width: 1920px) {
+    #bLeft > img ,#bRight > img {
+        user-select: none;
+        width: 27px;
+        height: 27px;
+    }
+
+    #bRight {
+        margin-right: 60px;
+    }
+
+    #bLeft {
+        margin-left: 60px;
+    }
+
+    .topBar > img {
+        width: 80px;
+        height: 90px;
+    }
+
+    .topBar {
+        align-items: flex-start;
+        padding-top: 5px;
+    }
+
+    .topBarContext {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .topBarContext > a , .topBarContext > div {
+        text-align: start;
+    }
+
     .topBarContext > a {
-        font-size: 30px;
+        font-size: 28px;
     }
 
     .topBarContext > a > div:first-child {
-        font-size: 23px;
+        font-size: 30px;
+    }
+
+    /* Стили для верхней панели */
+    .top_panel {
+        height: 50px;
+    }
+
+    .top_nav_panel {
+        height: 40px;
+        width: 80%;
+    }
+
+    /* Стили для ссылок и блоков в верхней навигационной панели */
+    .top_nav_panel > a, .top_nav_panel > div {
+        border-radius: 7px;
+        max-width: 460px;
+        min-width: fit-content;
+        font-size: 22px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    #flag {
+        min-width: 80px;
+        min-height: 80px;
+
+        width: 80px;
+        height: 80px;
+    }
+
+    footer {
+        width: 100vw;
+        white-space: normal;
+        font-size: 17px;
     }
 }
 
@@ -217,11 +355,7 @@ header {
 /* Стили для флага */
 #flag {
     border: 1px solid #c6c6c6;
-    min-width: 100px;
-    min-height: 100px;
     position: relative;
-    width: 100px;
-    height: 100px;
     border-radius: 300px;
     background: #fff;
     margin: 10px;

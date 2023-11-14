@@ -1,4 +1,12 @@
 "use strict";
+///////////
+///////////
+///////////
+///////////
+///////////
+///////////
+/////////// ДОДЕЛАТЬ ПАНЕЛЬКУ КОНТЕКСТ МЕНЮ ВСПЛЫВАЮЩЕЮ
+
 
 document.addEventListener('DOMContentLoaded', () => {
     // Массив с элементами верхней панели
@@ -118,6 +126,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Функция для обновления количества элементов в зависимости от ширины в top_nav_panel
+    
+    // если у нас нету 
     function updateNavItemCount(count) {
         if (count > navItemsCount) {
             for (let i = navItemsCount; i < count; i++) {

@@ -1,10 +1,12 @@
 ﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
+    <meta charset="UTF-16">
     <title>@ViewData["Title"]</title>
     <link rel="icon" href="~/images/favicon.ico" type="image/x-icon"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
 <link rel="stylesheet" href="~/styles/layout.css">
@@ -23,9 +25,12 @@
         <img src="~/images/Upravlenie-Delami-Presidenta-Gerb.svg" width="100px" height="100px" alt=""/>
     </div>
     <div class="top_panel">
-        <button id="bLeft">&#11164;</button>
+        <button id="bLeft">
+            <img src="~/images/arrow_icon-icons.com_73519.svg" alt="Влево"/></button>
         <div class="top_nav_panel"></div>
-        <button id="bRight">&#11166;</button>
+        <button id="bRight">
+            <img src="~/images/arrow_icon-icons.com_73519.svg" alt="Вправо"/>
+        </button>
     </div>
 </header>
 @RenderBody()
