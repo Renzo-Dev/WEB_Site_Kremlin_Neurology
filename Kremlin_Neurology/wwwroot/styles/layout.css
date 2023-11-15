@@ -36,8 +36,6 @@ header {
 /* Стили для верхней панели */
 .top_panel {
     background-color: #ededed;
-    height: 53px;
-    max-height: 59px;
     width: 100%;
     min-width: 300px;
     overflow: hidden;
@@ -105,11 +103,9 @@ header {
     min-width: fit-content;
     text-align: center;
     white-space: nowrap;
-    max-height: 45px;
     margin: 0 10px;
     padding: 1vmin;
     font-size: 22px;
-    font-family: Monospaced, serif;
     text-decoration: none;
     color: black;
     transition: background 180ms ease-in-out;
@@ -317,29 +313,177 @@ header {
 
 /* Стили для экранов WQHD (2560x1440) и выше */
 @media screen and (min-width: 2560px) {
+    #bLeft > img ,#bRight > img {
+        user-select: none;
+        width: 35px;
+        height: 35px;
+    }
+
+    #bRight {
+        margin-right: 60px;
+    }
+
+    #bLeft {
+        margin-left: 60px;
+    }
+
+    .topBar > img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .topBar {
+        align-items: flex-start;
+        padding-top: 5px;
+    }
+
+    .topBarContext {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .topBarContext > a , .topBarContext > div {
+        text-align: start;
+    }
+
     .topBarContext > a {
-        font-size: 35px;
+        font-size: 37px;
     }
 
     .topBarContext > a > div:first-child {
+        font-size: 35px;
+    }
+
+    /* Стили для верхней панели */
+    .top_panel {
+        height: 80px;
+    }
+
+    .top_nav_panel {
+        height: 80px;
+        width: 80%;
+    }
+
+    /* Стили для ссылок и блоков в верхней навигационной панели */
+    .top_nav_panel > a, .top_nav_panel > div {
+        border-radius: 7px;
+        max-width: 460px;
+        min-width: fit-content;
         font-size: 30px;
+        height: 60px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    #flag {
+        min-width: 120px;
+        min-height: 120px;
+
+        width: 80px;
+        height: 80px;
+    }
+
+    footer {
+        width: 100vw;
+        white-space: normal;
+        font-size: 17px;
     }
 }
 
 /* Стили для экранов 4K (3840x2160) и выше */
 @media screen and (min-width: 3840px) {
+    #bLeft > img ,#bRight > img {
+        user-select: none;
+        width: 55px;
+        height: 55px;
+    }
+
+    #bRight {
+        margin-right: 60px;
+    }
+
+    #bLeft {
+        margin-left: 60px;
+    }
+
+    .topBar > img {
+        width: 190px;
+        height: 190px;
+    }
+
+    .topBar {
+        align-items: flex-start;
+        padding-top: 5px;
+        padding-bottom: 20px;
+    }
+
+    .topBarContext {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .topBarContext > a , .topBarContext > div {
+        text-align: start;
+    }
+
     .topBarContext > a {
-        font-size: 40px;
+        font-size: 55px;
     }
 
     .topBarContext > a > div:first-child {
-        font-size: 35px;
+        font-size: 50px;
+    }
+
+    /* Стили для верхней панели */
+    .top_panel {
+        height: 105px;
+    }
+
+    .top_nav_panel {
+        height: 105px;
+        width: 80%;
+    }
+
+    /* Стили для ссылок и блоков в верхней навигационной панели */
+    .top_nav_panel > a, .top_nav_panel > div {
+        border-radius: 13px;
+        max-width: 460px;
+        min-width: fit-content;
+        font-size: 45px;
+        height: 85px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    #flag {
+        min-width: 170px;
+        min-height: 170px;
+    }
+
+    footer {
+        width: 100vw;
+        white-space: normal;
+        font-size: 17px;
     }
 }
 
-/* Стили для ссылок в выпадающем списке */
-.dropdown-content a {
-    border-radius: 7px;
+#dropdown-content {
+    position: absolute;
+    top: 190px;
+    left: 200px;
+    user-select: none;
+    width: 300px;
+    border-radius: 13px;
+    background-color: transparent;
+}
+
+#dropdown-content > a {
+    box-shadow: 0 4px 8px 0 rgba(34, 60, 80, 0.2);
+    border-radius: 13px;
     color: black;
     font-size: 20px;
     padding: 12px 16px;
@@ -348,7 +492,8 @@ header {
 }
 
 /* Изменение стилей при наведении на ссылки в выпадающем списке */
-.dropdown-content a:hover {
+#dropdown-content > a:hover {
+    cursor: pointer;
     background: #c6c6c6;
 }
 

@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Массив с элементами верхней панели
     const panelElements = [
         "Обучение", "История", "Научная работа",
-        "Клинические базы", "Библиотека", "Ежегодные конференции",
+        "Клинические базы", "Библиотека", "Ежегодные конференции ▼",
         "Научный кружок \"Школа молодых неврологов\"", "Новости и объявления", "Контактная информация"
     ];
 
@@ -97,7 +97,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Функция для изменения контекста
     function changeContext() {
         for (let i = startIndex; i < navItemsCount + startIndex; i++) {
-            topNavPanel.querySelectorAll('a')[i - startIndex].textContent = panelElements[i];
+            let topNavElem = topNavPanel.querySelectorAll('a')[i - startIndex];
+            topNavElem.textContent = panelElements[i];
         }
     }
 
