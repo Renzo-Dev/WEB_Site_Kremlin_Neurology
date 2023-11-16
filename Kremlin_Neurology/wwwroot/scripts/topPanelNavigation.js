@@ -93,20 +93,44 @@ document.addEventListener('DOMContentLoaded', () => {
             let topNavElem = topNavPanel.querySelectorAll('a')[i - startIndex];
             topNavElem.textContent = panelElements[i];
         }
-        test();
-    }
-    function handleMouseClick(event) {
-        console.log('Вы нажали на элемент:', event.target)
-        alert('WORK')
+        manageDropDown();
     }
     
-    function test() {
+    let dropDownTopNavElement; // элемент top nav panel , к которому привязан dropdown-content
+    let test = false;
+    function showDropDownMenu() {
+        let dropdownContent = document.getElementById('dropdown-content');
+        dropdownContent.style.display = 'inline';
+        dropdownContent.style.left = document.querySelector('.test').getBoundingClientRect().left + 'px';
+        dropdownContent.querySelectorAll('a').forEach(elem => {
+            elem.addEventListener('mouseenter', () => {
+                test = true;
+            });
+            elem.addEventListener('mouseleave',()=>{
+                test = false;
+                hideDropDownMenu();
+            });
+        });
+    }    
+    function hideDropDownMenu() {
+        let dropdownContent = document.getElementById('dropdown-content');
+        setTimeout(() => {
+            if (test===false) {
+                dropdownContent.style.display = 'none';
+            }
+        }, 200)
+    }
+    function manageDropDown() {
         topNavPanel.querySelectorAll('a').forEach(elem => {
             if (elem.textContent === "Ежегодные конференции ▼") {
-                elem.addEventListener('mouseenter',handleMouseClick);
-                console.log("WORK");
+                dropDownTopNavElement = topNavPanel;
+                elem.classList.add('test');
+                elem.addEventListener('mouseenter',showDropDownMenu);
+                elem.addEventListener('mouseout',hideDropDownMenu)                
             }else {
-                elem.removeEventListener('mouseenter', handleMouseClick);
+                elem.classList.remove('test');
+                elem.removeEventListener('mouseenter', showDropDownMenu);
+                elem.removeEventListener('mouseenter', hideDropDownMenu);
             }
         })
     }
