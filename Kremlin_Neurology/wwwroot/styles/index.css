@@ -1,2 +1,51 @@
 @import url('https://fonts.googleapis.com/css2?family=Varela&display=swap');
 
+@media screen and (min-width: 1920px) {
+    main {
+        height: 780px;
+    }
+}
+
+.main_content {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.main_context {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    padding-left: 20px;
+    width: 70%;
+}
+
+.main_context > h3 {
+    margin-bottom: 10px;
+}
+
+.main_context > div > a {
+    text-decoration: none;
+}
+
+.main_context > div {
+    text-align: left;
+    font-family: Varela,serif;
+    font-size: 22px;
+}
+
+main {
+    background-color: #f7f7f7;
+    display: flex;
+    width: 100vw;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    padding: 20px;
+}
+
+.main_content > img {
+    width: 20%;
+    border-radius: 7px;
+}

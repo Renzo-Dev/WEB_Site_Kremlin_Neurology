@@ -101,17 +101,17 @@ document.addEventListener('DOMContentLoaded', () => {
     function showDropDownMenu() {
         let dropdownContent = document.getElementById('dropdown-content');
         dropdownContent.style.display = 'inline';
-        dropdownContent.style.left = document.querySelector('.test').getBoundingClientRect().left + 'px';
+        dropdownContent.style.left = document.querySelector('.test').getBoundingClientRect().left + 25 + 'px';
         dropdownContent.querySelectorAll('a').forEach(elem => {
             elem.addEventListener('mouseenter', () => {
                 test = true;
             });
-            elem.addEventListener('mouseleave',()=>{
+            elem.addEventListener('mouseleave', () => {
                 test = false;
                 hideDropDownMenu();
             });
         });
-    }    
+    }
     function hideDropDownMenu() {
         let dropdownContent = document.getElementById('dropdown-content');
         setTimeout(() => {

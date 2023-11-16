@@ -526,7 +526,7 @@ header {
     display: none;
     position: absolute;
     user-select: none;
-    background-color: transparent;
+    background-color: white;
 }
 
 #dropdown-content > a:last-child {
