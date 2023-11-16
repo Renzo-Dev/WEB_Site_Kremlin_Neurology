@@ -1,11 +1,4 @@
 "use strict";
-///////////
-///////////
-///////////
-///////////
-///////////
-///////////
-/////////// ДОДЕЛАТЬ ПАНЕЛЬКУ КОНТЕКСТ МЕНЮ ВСПЛЫВАЮЩЕЮ
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -22,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Переменные для отслеживания начального индекса и количества элементов в top_nav_panel
     let startIndex = 0;
     let navItemsCount = 0;
-
+    
     // Ссылки на кнопки "влево" и "вправо"
     let bLeft = document.getElementById('bLeft');
     let bRight = document.getElementById('bRight');
@@ -93,13 +86,29 @@ document.addEventListener('DOMContentLoaded', () => {
         bLeft.style.visibility = startIndex === 0 ? 'hidden' : 'visible';
         bRight.style.visibility = startIndex + navItemsCount === panelElements.length ? 'hidden' : 'visible';
     }
-
+    
     // Функция для изменения контекста
     function changeContext() {
         for (let i = startIndex; i < navItemsCount + startIndex; i++) {
             let topNavElem = topNavPanel.querySelectorAll('a')[i - startIndex];
             topNavElem.textContent = panelElements[i];
         }
+        test();
+    }
+    function handleMouseClick(event) {
+        console.log('Вы нажали на элемент:', event.target)
+        alert('WORK')
+    }
+    
+    function test() {
+        topNavPanel.querySelectorAll('a').forEach(elem => {
+            if (elem.textContent === "Ежегодные конференции ▼") {
+                elem.addEventListener('mouseenter',handleMouseClick);
+                console.log("WORK");
+            }else {
+                elem.removeEventListener('mouseenter', handleMouseClick);
+            }
+        })
     }
 
     // Функция для изменения размеров навигационной панели
