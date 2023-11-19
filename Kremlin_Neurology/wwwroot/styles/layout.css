@@ -15,8 +15,8 @@
 /* Базовые стили для body и html элементов */
 body,
 html {
-    height: 100%;
-    width: 100vw;
+    height: 100vh;
+    width: 100%;
     min-width: 400px;
     font-family: var(--beautifulFont), serif;
     overflow-x: auto;
@@ -87,8 +87,8 @@ header {
 .top_nav_panel {
     width: 85%;
     height: inherit;
-    overflow: hidden;
-    position: absolute;
+    overflow: visible;
+    position: relative;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -98,13 +98,12 @@ header {
 /* Стили для ссылок и блоков в верхней навигационной панели */
 .top_nav_panel > a, .top_nav_panel > div {
     background-color: #d8d8d8;
-    border-radius: 7px;
     width: 460px;
     min-width: fit-content;
     text-align: center;
     white-space: nowrap;
     margin: 0 10px;
-    padding: 1vmin;
+    padding: 8px;
     font-size: 22px;
     text-decoration: none;
     color: black;
@@ -113,7 +112,8 @@ header {
 
 /* Изменение стилей при наведении на ссылки и блоки */
 .top_nav_panel > a:hover, .top_nav_panel > div:hover {
-    background: #959595;
+    background: #5e5e5e;
+    cursor: pointer;
 }
 
 /* Стили для верхней панели */
@@ -222,6 +222,7 @@ header {
 
     /* Стили для верхней навигационной панели */
     .top_nav_panel {
+        will-change: auto;
         width: 75%;
     }
 
@@ -325,7 +326,7 @@ header {
         border-radius: 13px;
         max-width: 460px;
         min-width: fit-content;
-        font-size: 22px;
+        font-size: 19px;
         margin-top: 5px;
         margin-bottom: 5px;
     }
@@ -341,7 +342,7 @@ header {
     footer {
         width: 100vw;
         white-space: normal;
-        font-size: 17px;
+        font-size: 13px;
     }
 }
 
@@ -438,7 +439,6 @@ header {
 
     footer {
         width: 100vw;
-        white-space: normal;
         font-size: 17px;
     }
 }
@@ -517,7 +517,6 @@ header {
 
     footer {
         width: 100vw;
-        white-space: normal;
         font-size: 17px;
     }
 }
@@ -618,13 +617,13 @@ hr {
 /* Стили для подвала */
 footer {
     white-space: nowrap;
-    font-family: Calibri, serif;
     position: fixed;
+    left: 0;
     bottom: 0;
     width: 100%;
-    padding: 10px;
-    margin: 0 auto;
+    color: black; /* Замените на желаемый цвет текста */
     text-align: center;
+    padding: 10px 0; /* Замените на желаемый внутренний отступ */
 }
 
 /* Анимация сдвига */
@@ -649,14 +648,14 @@ footer {
         opacity: 100%;
     }
     25% {
-        transform: translateX(400px);
+        transform: translateX(150px);
         opacity: 0;
     }
     50% {
         opacity: 0;
     }
     75% {
-        transform: translateX(-400px);
+        transform: translateX(-150px);
         opacity: 0
     }
     100% {
@@ -671,14 +670,14 @@ footer {
         opacity: 100%;
     }
     25% {
-        transform: translateX(-400px);
+        transform: translateX(-150px);
         opacity: 0;
     }
     50% {
         opacity: 0;
     }
     75% {
-        transform: translateX(400px);
+        transform: translateX(150px);
         opacity: 0;
     }
     100% {

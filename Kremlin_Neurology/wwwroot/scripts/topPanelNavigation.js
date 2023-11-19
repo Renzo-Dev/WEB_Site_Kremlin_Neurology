@@ -89,11 +89,13 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Функция для изменения контекста
     function changeContext() {
-        for (let i = startIndex; i < navItemsCount + startIndex; i++) {
-            let topNavElem = topNavPanel.querySelectorAll('a')[i - startIndex];
-            topNavElem.textContent = panelElements[i];
-        }
-        manageDropDown();
+        setTimeout(() => {
+            for (let i = startIndex; i < navItemsCount + startIndex; i++) {
+                let topNavElem = topNavPanel.querySelectorAll('a')[i - startIndex];
+                topNavElem.textContent = panelElements[i];
+            }
+            manageDropDown();
+        }, 150);
     }
     
     let dropDownTopNavElement; // элемент top nav panel , к которому привязан dropdown-content
