@@ -1,13 +1,13 @@
 "use strict";
 
-
 document.addEventListener('DOMContentLoaded', () => {
     // Массив с элементами верхней панели
     const panelElements = [
         "Обучение", "История", "Научная работа",
-        "Клинические базы", "Библиотека", "Ежегодные конференции ▼",
+        "Библиотека", "Клинические базы", "Ежегодные конференции ▼",
         "Научный кружок \"Школа молодых неврологов\"", "Новости и объявления", "Контактная информация"
     ];
+    const hRefElements = ["#", "#", "#", "/Library", "#", "#", "#", "#", "#", "#"];
 
     // Ссылка на верхнюю навигационную панель
     let topNavPanel = document.querySelector('.top_nav_panel');
@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Переменные для отслеживания начального индекса и количества элементов в top_nav_panel
     let startIndex = 0;
     let navItemsCount = 0;
-    
+
     // Ссылки на кнопки "влево" и "вправо"
     let bLeft = document.getElementById('bLeft');
     let bRight = document.getElementById('bRight');
@@ -86,20 +86,22 @@ document.addEventListener('DOMContentLoaded', () => {
         bLeft.style.visibility = startIndex === 0 ? 'hidden' : 'visible';
         bRight.style.visibility = startIndex + navItemsCount === panelElements.length ? 'hidden' : 'visible';
     }
-    
+
     // Функция для изменения контекста
     function changeContext() {
         setTimeout(() => {
             for (let i = startIndex; i < navItemsCount + startIndex; i++) {
                 let topNavElem = topNavPanel.querySelectorAll('a')[i - startIndex];
                 topNavElem.textContent = panelElements[i];
+                topNavElem.setAttribute("href", `${hRefElements[i]}`);
             }
             manageDropDown();
         }, 150);
     }
-    
+
     let dropDownTopNavElement; // элемент top nav panel , к которому привязан dropdown-content
     let test = false;
+
     function showDropDownMenu() {
         let dropdownContent = document.getElementById('dropdown-content');
         dropdownContent.style.display = 'inline';
@@ -114,22 +116,24 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
     function hideDropDownMenu() {
         let dropdownContent = document.getElementById('dropdown-content');
         setTimeout(() => {
-            if (test===false) {
+            if (test === false) {
                 dropdownContent.style.display = 'none';
             }
         }, 200)
     }
+
     function manageDropDown() {
         topNavPanel.querySelectorAll('a').forEach(elem => {
             if (elem.textContent === "Ежегодные конференции ▼") {
                 dropDownTopNavElement = topNavPanel;
                 elem.classList.add('test');
-                elem.addEventListener('mouseenter',showDropDownMenu);
-                elem.addEventListener('mouseout',hideDropDownMenu)                
-            }else {
+                elem.addEventListener('mouseenter', showDropDownMenu);
+                elem.addEventListener('mouseout', hideDropDownMenu)
+            } else {
                 elem.classList.remove('test');
                 elem.removeEventListener('mouseenter', showDropDownMenu);
                 elem.removeEventListener('mouseenter', hideDropDownMenu);
@@ -162,7 +166,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Функция для обновления количества элементов в зависимости от ширины в top_nav_panel
-    
+
     // если у нас нету 
     function updateNavItemCount(count) {
         if (count > navItemsCount) {

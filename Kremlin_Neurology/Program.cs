@@ -6,7 +6,19 @@ app.UseStaticFiles();
 
 app.MapControllerRoute(
     "default",
-    "{controller=Home}/{action=Index}"
+    "{controller}/{action}",
+    new { controller = "Home", action = "Index" });
+
+app.MapControllerRoute(
+    "Library",
+    "Library",
+    new { controller = "Home", action = "Library" }
+);
+
+app.MapControllerRoute(
+    "LibraryAccess",
+    "LibraryAccess",
+    new { controller = "Home", action = "LibraryAccess" }
 );
 
 app.Use(async (context, next) =>

@@ -1,0 +1,8 @@
+@using Kremlin_Neurology.Controllers
+
+@{
+    ViewData["Title"] = "Библиотека | Официальный сайт кафедры неврологии ФГБУ ДПО \"Центральная государственная медицинская академия\" УД Президента РФ";
+    Layout = "_Layout";
+}
+@{        Console.WriteLine(HomeController.PartialPage); }
+@{ @(await Html.PartialAsync(HomeController.PartialPage)) }

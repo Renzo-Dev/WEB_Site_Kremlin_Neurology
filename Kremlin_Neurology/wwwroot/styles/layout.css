@@ -124,12 +124,18 @@ header {
     width: 100%;
 }
 
-/* Стили для изображения в верхней панели */
-.topBar > img {
+.topBar > div:last-child {
+    align-items: center;
+    justify-content: center;
     margin-left: auto;
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 5px;
+}
+
+/* Стили для изображения в верхней панели */
+.topBar > div:last-child > img {
     margin-right: 20px;
-    align-self: center;
-    justify-self: flex-end;
 }
 
 /* Стили для контекста в верхней панели */
@@ -187,7 +193,7 @@ header {
         margin-left: 10%;
     }
 
-    .topBar > img {
+    .topBar > div:last-child > img {
         width: 50px;
         height: 50px;
         position: relative;
@@ -282,7 +288,7 @@ header {
         margin-left: 60px;
     }
 
-    .topBar > img {
+    .topBar > div:last-child > img {
         width: 80px;
         height: 90px;
     }
@@ -379,7 +385,7 @@ header {
         margin-left: 60px;
     }
 
-    .topBar > img {
+    .topBar > div:last-child > img {
         width: 120px;
         height: 120px;
     }
@@ -459,7 +465,7 @@ header {
         margin-left: 60px;
     }
 
-    .topBar > img {
+    .topBar > div:last-child > img {
         width: 190px;
         height: 190px;
     }
