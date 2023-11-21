@@ -3,22 +3,17 @@
 window.addEventListener('DOMContentLoaded',()=> {
     document.getElementById('sendPassword').addEventListener('click', function (event) {
         event.preventDefault();
-
         let password = document.getElementById('passwordField').value;
 
-        fetch('/LibraryAccess', {
+        fetch('/checkPassword', {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
+            headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({password: password})
-        }).then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            console.log('Password set successfully')
-        }).catch(error => {
-            console.error('Error', error);
-        });
+        }).then(response => response.text())
+            .then(data => {
+                // Обновляем содержимое частичного представления
+                document.getElementById('mainContent').innerHTML = data;
+            })
+            .catch(error => console.error('Error:', error));
     });
 });

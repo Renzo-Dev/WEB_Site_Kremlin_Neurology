@@ -1,42 +1,40 @@
-﻿using System.Text;
-using System.Text.Json;
-using Kremlin_Neurology.Models;
+﻿using Kremlin_Neurology.Models;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
+
 
 namespace Kremlin_Neurology.Controllers;
 
 public class HomeController : Controller
 {
-    public static string PartialPage { get; set; }
-
     [HttpGet]
     public IActionResult Index()
     {
         return View();
     }
 
-    [HttpPost]
-    public async Task<IActionResult> LibraryAccess()
-    {
-        using (var reader = new StreamReader(Request.Body, Encoding.UTF8))
-        {
-            string requestBody = await reader.ReadToEndAsync();
-
-            // Десериализация JSON в объект модели
-            PasswordModel? passwordModel = JsonSerializer.Deserialize<PasswordModel>(requestBody);
-
-            // Используйте passwordModel.Password по вашему усмотрению
-            var password = passwordModel?.password;
-            
-            PartialPage = "~/Views/Partials/Lib.cshtml";
-            return View("~/Views/Home/Library.cshtml");
-        }
-    }
-
     [HttpGet]
     public IActionResult Library()
     {
-        PartialPage = "~/Views/Partials/Forma.cshtml";
-        return View("~/Views/Home/Library.cshtml");
+        return View();
+    }
+
+    [HttpPost]
+    public async Task<ActionResult> CheckPassword()
+    {
+        string tempPass = "123123";
+        
+        using (var reader = new StreamReader(Request.Body))
+        {
+            var json = await reader.ReadToEndAsync();
+            var passModel = JsonConvert.DeserializeObject<PasswordModel>(json);
+            if (passModel != null && passModel.password == tempPass)
+            {
+                return PartialView("~/Views/Partials/Library.cshtml");
+            }
+
+            Response.StatusCode = StatusCodes.Status401Unauthorized;
+            return PartialView("~/Views/Partials/InvalidPassword.cshtml");
+        }
     }
 }

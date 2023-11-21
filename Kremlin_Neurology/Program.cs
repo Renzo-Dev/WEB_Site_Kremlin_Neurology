@@ -3,6 +3,8 @@ builder.Services.AddControllersWithViews();
 var app = builder.Build();
 
 app.UseStaticFiles();
+app.UseHttpsRedirection();
+app.UseRouting();
 
 app.MapControllerRoute(
     "default",
@@ -12,14 +14,12 @@ app.MapControllerRoute(
 app.MapControllerRoute(
     "Library",
     "Library",
-    new { controller = "Home", action = "Library" }
-);
+    new { controller = "Home", action = "Library" });
 
 app.MapControllerRoute(
-    "LibraryAccess",
-    "LibraryAccess",
-    new { controller = "Home", action = "LibraryAccess" }
-);
+    "checkPassword",
+    "checkPassword",
+    new { controller = "Home", action = "CheckPassword" });
 
 app.Use(async (context, next) =>
 {
