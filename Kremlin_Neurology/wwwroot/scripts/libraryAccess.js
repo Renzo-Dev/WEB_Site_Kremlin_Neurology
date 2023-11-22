@@ -2,17 +2,19 @@
 
 // Ждем загрузки контента страницы
 window.addEventListener('DOMContentLoaded', () => {
-    // Получаем основной контент
+    // Получаем основной контент и кнопку отправки пароля
     let mainContent = document.getElementById('mainContent');
+    let sendPassword = document.getElementById('sendPassword');
 
     // Получаем поле ввода пароля
     let inputPassword = mainContent.querySelector('input');
     inputPassword.addEventListener('input', () => {
-        // Скрываем сообщение об ошибке при вводе пароля
+        // Скрываем сообщение об ошибке при вводе пароля, если оно отображается
         let errorMessage = mainContent.querySelector('#errorMessage');
         if (errorMessage.style.display === 'inline') {
             errorMessage.style.display = 'none';
         }
+
         // Отображаем кнопку отправки при вводе пароля более 3 символов
         let sendPasswordBtn = mainContent.querySelector('#sendPassword');
         if (inputPassword.value.length > 3 && !inputPassword.classList.contains('activeButton')) {
@@ -23,8 +25,21 @@ window.addEventListener('DOMContentLoaded', () => {
     });
 
     // Обработчик события нажатия кнопки отправки пароля
-    document.getElementById('sendPassword').addEventListener('click', async function (event) {
+    sendPassword.addEventListener('click', function (event) {
         event.preventDefault();
+        checkPassword();
+    });
+
+    // Обработчик события нажатия клавиши Enter
+    inputPassword.addEventListener('keypress', function (event) {
+        if (event.key === 'Enter' || event.keyCode === 13) {
+            event.preventDefault();
+            checkPassword();
+        }
+    });
+
+    // Функция для проверки пароля
+    async function checkPassword() {
         let password = document.getElementById('passwordField').value;
         let regex = /^[a-zA-Z0-9!@#]+$/;
 
@@ -34,8 +49,8 @@ window.addEventListener('DOMContentLoaded', () => {
                 // Отправляем запрос на сервер для проверки пароля
                 let response = await fetch('/checkPassword', {
                     method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ password: password })
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({password: password})
                 });
 
                 // Проверяем статус ответа
@@ -63,5 +78,5 @@ window.addEventListener('DOMContentLoaded', () => {
             errorMessage.textContent = 'Некорректный пароль';
             errorMessage.style.display = 'inline';
         }
-    });
+    }
 });

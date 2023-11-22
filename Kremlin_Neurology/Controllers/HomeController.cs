@@ -16,7 +16,7 @@ public class HomeController : Controller
     [HttpGet]
     public IActionResult Library()
     {
-        return View();
+        return View("~/Views/Home/LibraryAccess.cshtml");
     }
 
     [HttpPost]
@@ -32,6 +32,7 @@ public class HomeController : Controller
             {
                 return PartialView("~/Views/Partials/Library.cshtml");
             }
+
             return StatusCode(StatusCodes.Status401Unauthorized);
         }
     }
