@@ -1,0 +1,51 @@
+#mainContent {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 70px;
+}
+
+#mainContent > div {
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    white-space: nowrap;
+}
+
+#mainContent > input {
+    white-space: nowrap;
+    outline: none;
+    border: 1px solid black;
+    border-radius: 4px;
+    width: 300px;
+    padding: 5px;
+    font-size: 20px;
+}
+
+#mainContent > button {
+    display: none;
+    border: 1px solid black;
+    font-size: 20px;
+    margin-top: 10px;
+    padding: 3px 20px;
+    border-radius: 5px;
+    transition: 200ms ease-in-out;
+}
+
+#mainContent > button:hover {
+    background-color: #c1c1c1;
+}
+
+#mainContent > button:active {
+    background-color: #555555;
+}
+
+#errorMessage {
+    display: none;
+    text-align: left;
+    margin-top: 15px;
+    color: red;
+    font-size: 25px;
+    font-family: Arial,serif;
+}

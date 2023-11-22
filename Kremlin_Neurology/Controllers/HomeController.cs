@@ -20,10 +20,10 @@ public class HomeController : Controller
     }
 
     [HttpPost]
-    public async Task<ActionResult> CheckPassword()
+    public async Task<ActionResult?> CheckPassword()
     {
         string tempPass = "123123";
-        
+
         using (var reader = new StreamReader(Request.Body))
         {
             var json = await reader.ReadToEndAsync();
@@ -32,9 +32,7 @@ public class HomeController : Controller
             {
                 return PartialView("~/Views/Partials/Library.cshtml");
             }
-
-            Response.StatusCode = StatusCodes.Status401Unauthorized;
-            return PartialView("~/Views/Partials/InvalidPassword.cshtml");
+            return StatusCode(StatusCodes.Status401Unauthorized);
         }
     }
 }

@@ -4,10 +4,12 @@
     ViewData["Title"] = "Библиотека | Официальный сайт кафедры неврологии ФГБУ ДПО \"Центральная государственная медицинская академия\" УД Президента РФ";
     Layout = "_Layout";
 }
+<link href="~/styles/library.css" type="text/css" rel="stylesheet"/>
 
 <div id="mainContent">
     <div>Для доступа в библиотеку введите пароль</div>
-    <input type="text" name="password" id="passwordField" required="required"/>
-    <button id="sendPassword">Отправить</button>
+    <input type="text" placeholder="ведите пароль" name="password" id="passwordField" autocomplete="off"/>
+    <button id="sendPassword">Ввести</button>
+    <span id="errorMessage"></span>
     <script src="~/scripts/libraryAccess.js"></script>
 </div>
