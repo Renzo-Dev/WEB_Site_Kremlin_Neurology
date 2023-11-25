@@ -10,6 +10,9 @@
         width: 84%;
         text-align: left;
         padding: 15px;
+        height: 75vh;
+        display: flex;
+        flex-direction: column;
     }
 
     .textContent > h3:first-child{
@@ -21,6 +24,10 @@
         font-size: 17px;
         text-align: left;
         margin-bottom: 10px;
+    }
+    
+    .textContent > .panel:first-child {
+        height: 500px;
     }
     
     .textContent > div {
@@ -83,10 +90,22 @@
     .accordion_wrapper {
         padding: 10px;
         background-color: #ededed;
-        max-height: 350px;
+        max-height: 500px;
+        height: 100%;
         overflow: auto;
     }
-    
+    .textContent > .accordion {
+        background-color: #d7d7d7;
+        color: black;
+        font-size: 20px;
+        cursor: pointer;
+        padding: 10px;
+        width: fit-content;
+        text-align: left;
+        border: none;
+        outline: none;
+        transition: 0.4s;
+    }
     
     /* Style the buttons that are used to open and close the accordion panel */
     .accordion {
@@ -111,7 +130,7 @@
     .panel {
         padding: 0 10px;
         height: 0;
-        max-height: 150px;
+        max-height: 170px;
         font-size: 18px;
         overflow: auto;
         transition: height 0.2s ease-out;
