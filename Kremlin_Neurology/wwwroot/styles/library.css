@@ -15,6 +15,10 @@
         flex-direction: column;
     }
 
+    .textContent > h4 > a {
+        text-decoration: none;
+    }
+    
     .textContent > h3:first-child{
         text-align: center;
         margin-bottom: 10px;
@@ -24,10 +28,6 @@
         font-size: 17px;
         text-align: left;
         margin-bottom: 10px;
-    }
-    
-    .textContent > .panel:first-child {
-        height: 500px;
     }
     
     .textContent > div {
@@ -88,12 +88,13 @@
     }
 
     .accordion_wrapper {
+        border-radius: 7px;
         padding: 10px;
         background-color: #ededed;
-        max-height: 500px;
         height: 100%;
         overflow: auto;
     }
+    
     .textContent > .accordion {
         background-color: #d7d7d7;
         color: black;
@@ -130,7 +131,7 @@
     .panel {
         padding: 0 10px;
         height: 0;
-        max-height: 170px;
+        max-height: 250px;
         font-size: 18px;
         overflow: auto;
         transition: height 0.2s ease-out;
