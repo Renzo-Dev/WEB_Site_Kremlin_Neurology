@@ -10,4 +10,10 @@
       <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     </ItemGroup>
 
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="wwwroot\library\07_CM8_23.pdf" />
+      <_ContentIncludedByDefault Remove="wwwroot\library\DiIR_2009_4_42-47.doc" />
+      <_ContentIncludedByDefault Remove="wwwroot\library\Ratner_A_Yu_Nevrologiya_novorozhdyonnyh_2005.djvu" />
+    </ItemGroup>
+
 </Project>

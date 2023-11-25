@@ -16,7 +16,7 @@ public class HomeController : Controller
     [HttpGet]
     public IActionResult Library()
     {
-        return View("~/Views/Home/LibraryAccess.cshtml");
+        return View("~/Views/Home/Library.cshtml");
     }
 
     [HttpPost]
@@ -30,7 +30,7 @@ public class HomeController : Controller
             var passModel = JsonConvert.DeserializeObject<PasswordModel>(json);
             if (passModel != null && passModel.password == tempPass)
             {
-                return PartialView("~/Views/Partials/Library.cshtml");
+                return PartialView("~/Views/Partials/PrivateLibrary.cshtml");
             }
 
             return StatusCode(StatusCodes.Status401Unauthorized);

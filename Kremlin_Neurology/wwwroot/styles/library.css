@@ -1,51 +1,150 @@
-#mainContent {
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 70px;
-}
+@media screen and (min-width: 1920px) and (max-width: 2560px) {
+    #mainContent {
+        width: 100vw;
+        display: flex;
+        flex-direction: row;
+        margin-top: 10px;
+    }
+    
+    .textContent {
+        width: 84%;
+        text-align: left;
+        padding: 15px;
+    }
 
-#mainContent > div {
-    font-size: 25px;
-    font-weight: 600;
-    margin-bottom: 20px;
-    white-space: nowrap;
-}
+    .textContent > h3:first-child{
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    
+    .textContent > h4,h3 {
+        font-size: 17px;
+        text-align: left;
+        margin-bottom: 10px;
+    }
+    
+    .textContent > div {
+        margin-bottom: 10px;
+    }
+    
+    #LibraryAccess {
+        padding: 10px;
+        width: 300px;
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
 
-#mainContent > input {
-    white-space: nowrap;
-    outline: none;
-    border: 1px solid black;
-    border-radius: 4px;
-    width: 300px;
-    padding: 5px;
-    font-size: 20px;
-}
+    #LibraryAccess > div {
+        text-align: center;
+        width: 100%;
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 20px;
+    }
 
-#mainContent > button {
-    display: none;
-    border: 1px solid black;
-    font-size: 20px;
-    margin-top: 10px;
-    padding: 3px 20px;
-    border-radius: 5px;
-    transition: 200ms ease-in-out;
-}
+    #LibraryAccess > input {
+        white-space: nowrap;
+        outline: none;
+        border: 1px solid black;
+        border-radius: 4px;
+        width: 100%;
+        padding: 5px;
+        font-size: 20px;
+    }
 
-#mainContent > button:hover {
-    background-color: #c1c1c1;
-}
+    #LibraryAccess > button {
+        display: none;
+        border: 1px solid black;
+        font-size: 20px;
+        margin-top: 10px;
+        padding: 3px 20px;
+        border-radius: 5px;
+        transition: 200ms ease-in-out;
+    }
 
-#mainContent > button:active {
-    background-color: #555555;
-}
+    #LibraryAccess > button:hover {
+        background-color: #c1c1c1;
+    }
 
-#errorMessage {
-    display: none;
-    text-align: left;
-    margin-top: 15px;
-    color: red;
-    font-size: 25px;
-    font-family: Arial,serif;
+    #LibraryAccess > button:active {
+        background-color: #555555;
+    }
+
+    #errorMessage {
+        display: none;
+        text-align: left;
+        margin-top: 15px;
+        color: red;
+        font-size: 25px;
+        font-family: Arial, serif;
+    }
+
+    .accordion_wrapper {
+        padding: 10px;
+        background-color: #ededed;
+        max-height: 350px;
+        overflow: auto;
+    }
+    
+    
+    /* Style the buttons that are used to open and close the accordion panel */
+    .accordion {
+        background-color: #d7d7d7;
+        color: black;
+        font-size: 20px;
+        cursor: pointer;
+        padding: 10px;
+        width: 100%;
+        text-align: left;
+        border: none;
+        outline: none;
+        transition: 0.4s;
+    }
+
+    /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+    .active, .accordion:hover {
+        background-color: #bdbdbd;
+    }
+
+    /* Style the accordion panel. Note: hidden by default */
+    .panel {
+        padding: 0 10px;
+        height: 0;
+        max-height: 150px;
+        font-size: 18px;
+        overflow: auto;
+        transition: height 0.2s ease-out;
+    }
+    
+    .panel > p {
+        border-radius: 13px;
+        background-color: #d9d9d9;
+        padding: 15px;
+        margin: 15px 0;
+    }
+
+    .panel > p > a {
+        white-space: nowrap;
+        text-decoration: none;
+        font-size: 15px;
+        font-weight: 600;
+    }
+
+    .panel > p > a > img {
+        width: 30px;
+        height: 30px;
+    }
+    
+    .accordion:after {
+        content: '\02795'; /* Unicode character for "plus" sign (+) */
+        font-size: 13px;
+        color: #777;
+        float: right;
+        margin-left: 5px;
+    }
+
+    .active:after {
+        content: "\2796"; /* Unicode character for "minus" sign (-) */
+    }
 }
