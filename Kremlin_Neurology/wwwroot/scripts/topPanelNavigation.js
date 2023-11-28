@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
             topNavPanel.querySelectorAll('a').forEach(elem => {
                 elem.classList.remove('anim_right', 'anim_left');
             });
-        }, 700);
+        }, 400);
     }
 
     // Функция для обновления состояния навигации

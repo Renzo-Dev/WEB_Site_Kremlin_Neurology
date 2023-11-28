@@ -21,6 +21,12 @@ app.MapControllerRoute(
     "checkPassword",
     new { controller = "Home", action = "CheckPassword" });
 
+app.MapControllerRoute(
+    "Download",
+    "Download/{fileName}",
+    new { controller = "File", action = "Download" }
+);
+
 app.Use(async (context, next) =>
 {
     await next();

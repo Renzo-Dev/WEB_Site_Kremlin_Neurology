@@ -634,8 +634,8 @@ footer {
 
 /* Анимация сдвига */
 .anim_right, .anim_left {
-    animation-duration: 700ms;
-    animation-timing-function: linear;
+    animation-duration: 400ms;
+    animation-timing-function: ease-in-out;
     animation-direction: alternate;
     animation-fill-mode: forwards;
 }
