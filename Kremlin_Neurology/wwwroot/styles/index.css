@@ -66,8 +66,9 @@
         border: 1px solid black;
         max-width: 40%;
         height: fit-content;
-        max-height: 95%;
+        max-height: 97%;
         border-radius: 4px;
+        overflow: auto;
     }
 
     .employee_wrapper > h3 {
