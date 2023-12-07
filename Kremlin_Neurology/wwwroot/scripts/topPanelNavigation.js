@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "Библиотека", "Клинические базы", "Ежегодные конференции ▼",
         "Научный кружок \"Школа молодых неврологов\"", "Новости и объявления", "Контактная информация"
     ];
-    const hRefElements = ["#", "#", "#", "/Library", "#", "#", "#", "#", "#", "#"];
+    const hRefElements = ["/edu.htm", "#", "#", "/library.htm", "#", "#", "#", "#", "#", "#"];
 
     // Ссылка на верхнюю навигационную панель
     let topNavPanel = document.querySelector('.top_nav_panel');
@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
             topNavPanel.querySelectorAll('a').forEach(elem => {
                 elem.classList.remove('anim_right', 'anim_left');
             });
-        }, 400);
+        }, 600);
     }
 
     // Функция для обновления состояния навигации
@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function showDropDownMenu() {
         let dropdownContent = document.getElementById('dropdown-content');
         dropdownContent.style.display = 'inline';
-        dropdownContent.style.left = document.querySelector('.test').getBoundingClientRect().left + 25 + 'px';
+        dropdownContent.style.left = document.querySelector('.test').getBoundingClientRect().left + 15 + 'px';
         dropdownContent.querySelectorAll('a').forEach(elem => {
             elem.addEventListener('mouseenter', () => {
                 test = true;

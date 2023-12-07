@@ -13,7 +13,7 @@ app.MapControllerRoute(
 
 app.MapControllerRoute(
     "Library",
-    "Library",
+    "library.htm",
     new { controller = "Home", action = "Library" });
 
 app.MapControllerRoute(
@@ -25,6 +25,12 @@ app.MapControllerRoute(
     "Download",
     "Download/{fileName}",
     new { controller = "File", action = "Download" }
+);
+
+app.MapControllerRoute(
+    "learning",
+    "edu.htm",
+    new { controller = "Home", action = "Learning" }
 );
 
 app.Use(async (context, next) =>

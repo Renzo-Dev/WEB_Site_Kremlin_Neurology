@@ -8,14 +8,14 @@ public class FileController : Controller
     public IActionResult Download(string fileName)
     {
         // Путь к файлу внутри директории wwwroot
-        string filePath = Path.Combine(Directory.GetCurrentDirectory(), "FileLibrary", fileName);
+        string filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/FileLibrary", fileName);
 
         try
         {
             // Проверка наличия файла
             if (!System.IO.File.Exists(filePath))
             {
-                return NotFound("Файл не найден.");
+                return NotFound($"Файл не найден. {fileName + filePath}");
             }
 
             // Определение MIME-типа файла

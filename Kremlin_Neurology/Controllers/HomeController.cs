@@ -36,4 +36,10 @@ public class HomeController : Controller
             return StatusCode(StatusCodes.Status401Unauthorized);
         }
     }
+
+    [HttpGet]
+    public IActionResult Learning()
+    {
+        return View();
+    }
 }
