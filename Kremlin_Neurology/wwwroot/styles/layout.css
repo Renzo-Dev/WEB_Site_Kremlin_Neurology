@@ -59,7 +59,7 @@ header {
     }
 
     .topBarContext > a > div:first-child {
-        font-size: calc(30px + .50vw);
+        font-size: calc(20px + .50vw);
     }
 
     .topBarContext > a > div:last-child {
@@ -121,8 +121,8 @@ header {
 
     #bLeft > img, #bRight > img {
         user-select: none;
-        width: 27px;
-        height: 27px;
+        width: calc(10px + 1vw);
+        height: calc(10px + 1vw);
     }
 
     #flag {
