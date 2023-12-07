@@ -15,248 +15,83 @@
 /* Базовые стили для body и html элементов */
 body,
 html {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
     height: 100vh;
-    width: 100%;
-    min-width: 400px;
-    font-family: var(--beautifulFont), serif;
-    overflow-x: auto;
-    overflow-y: auto;
-}
-
-/* Стили для шапки */
-header {
-    user-select: none;
-    min-width: 100vw;
-    height: fit-content;
-    display: flex;
-    flex-direction: column;
-    border-bottom: 2px solid #b2b2b2;
-}
-
-/* Стили для верхней панели */
-.top_panel {
-    background-color: #ededed;
-    width: 100%;
+    min-height: 600px;
+    width: 100vw;
     min-width: 300px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    border-top: 2px solid #c5c5c5;
+    font-family: var(--beautifulFont), serif;
+    overflow: auto;
 }
 
-/* Стили для кнопок слева и справа в верхней панели */
-#bRight, #bLeft {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: none;
-    padding: 0 5px;
-    border-radius: 45px;
-    z-index: 99999;
-    visibility: hidden;
-    font-family: 'Arial', sans-serif; /* Замените 'Arial' на подходящий шрифт */
-    font-size: 35px;
-    outline: none;
-}
-
-#bRight:hover, #bLeft:hover {
-    cursor: pointer;
-}
-
-#bRight:active, #bLeft:active {
-    color: #adadad;
-}
-
-#bRight {
-    margin-left: auto;
-    margin-right: 30px;
-}
-
-#bRight > img {
-    transform: rotate(180deg);
-}
-
-#bLeft {
-    margin-right: auto;
-    margin-left: 30px;
-}
-
-/* Стили для верхней навигационной панели */
-.top_nav_panel {
-    width: 85%;
-    height: inherit;
-    overflow: visible;
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Стили для ссылок и блоков в верхней навигационной панели */
-.top_nav_panel > a, .top_nav_panel > div {
-    background-color: #d8d8d8;
-    width: 460px;
-    min-width: fit-content;
-    text-align: center;
-    white-space: nowrap;
-    margin: 0 10px;
-    padding: 8px;
-    font-size: 22px;
-    text-decoration: none;
-    color: black;
-    transition: background 180ms ease-in-out;
-}
-
-/* Изменение стилей при наведении на ссылки и блоки */
-.top_nav_panel > a:hover, .top_nav_panel > div:hover {
-    background: #5e5e5e;
-    cursor: pointer;
-}
-
-/* Стили для верхней панели */
-.topBar {
-    background: #d9effc;
-    display: flex;
-    flex-direction: row;
+header {
+    height: fit-content;
     width: 100%;
 }
 
-.topBar > div:last-child {
-    align-items: center;
-    justify-content: center;
-    margin-left: auto;
-    display: flex;
-    flex-direction: row;
-    padding-bottom: 5px;
+@media only screen and (max-width: 767px) {
+    /* Стили для устройств с максимальной шириной экрана 767px (обычно мобильные устройства) */
 }
 
-/* Стили для изображения в верхней панели */
-.topBar > div:last-child > img {
-    margin-right: 20px;
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+    /* Стили для устройств с шириной экрана от 768px до 1023px (обычно планшеты) */
 }
 
-/* Стили для контекста в верхней панели */
-.topBarContext {
-    margin-left: 20px;
-    display: flex;
-    flex-direction: column;
-    margin-top: 10px;
-    font-size: 27px;
-    font-family: Calibri, serif;
-    font-weight: 600;
-    justify-content: center;
+@media only screen and (min-width: 1024px) and (max-width: 1279px) {
+    /* Стили для устройств с шириной экрана от 1024px до 1279px (небольшие ноутбуки и некоторые десктопы) */
 }
 
-.topBarContext > a {
-    color: black;
-    text-decoration: none;
-    transition: color 150ms ease-in-out;
-    border: none;
-}
-
-.topBarContext > a > div:first-child {
-    font-weight: 500;
-}
-
-/* Стили для телефонов (предположим, что ширина телефона - 375px) */
-@media screen and (max-width: 767px) {
-    #dropdown-content {
-        width: 200px;
-        border-radius: 13px;
-    }
-
-    #dropdown-content > a:last-child {
-        margin-top: 10px;
-    }
-
-    #dropdown-content > a {
-        box-shadow: 0 4px 3px 4px rgba(34, 60, 80, 0.2);
-        border-radius: 15px;
-        font-size: 12px;
-        padding: 12px 16px;
-    }
-    
-    #bLeft > img ,#bRight > img {
-        user-select: none;
-        width: 17px;
-        height: 17px;
-    }
-    
-    #bRight {
-        margin-right: 10%;
-    }
-
-    #bLeft {
-        margin-left: 10%;
-    }
-
-    .topBar > div:last-child > img {
-        width: 50px;
-        height: 50px;
-        position: relative;
-        left: 7px;
-    }
-
+/* Стили для устройств с шириной экрана от 1280px и более (большие десктопы) */
+@media only screen and (min-width: 1280px) {
     .topBar {
+        height: fit-content;
+        display: flex;
+        flex-direction: row;
         align-items: center;
-        padding-bottom: 10px;
     }
 
-    .topBarContext{
-        margin-left: auto;
+    .topBarContext {
+        margin-top: 20px;
+        align-self: start;
+        display: flex;
     }
 
-    .topBarContext > a , .topBarContext > div {
-        text-align: center;
-    }
-
-    .topBarContext > a {
-        font-size: 13px;
-        font-weight: 550;
-    }
     .topBarContext > a > div:first-child {
-        font-size: 12px;
+        font-size: 30px;
     }
 
-    /* Стили для верхней панели */
+    .topBarContext > a > div:last-child {
+        font-size: 28px;
+        font-weight: 600;
+    }
+
+    .topBarImages {
+        display: flex;
+        flex-direction: row;
+        margin-left: auto;
+        margin-right: 15px;
+    }
+
+    .topBarImages > img {
+        width: 90px;
+        height: 90px;
+    }
+
     .top_panel {
-        height: 27px;
+        border-top: 2px solid #c5c5c5;
+        border-bottom: 2px solid #c5c5c5;
+        min-width: 300px;
+        width: 100%;
+        padding: 7px 0;
+        height: fit-content;
+        overflow: hidden;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
     }
-
-    /* Стили для верхней навигационной панели */
-    .top_nav_panel {
-        will-change: auto;
-        width: 75%;
-    }
-
-    /* Стили для ссылок и блоков в верхней навигационной панели */
-    .top_nav_panel > a, .top_nav_panel > div {
-        border-radius: 10px;
-        max-width: 250px;
-        font-family: Arial,serif;
-        min-width: fit-content;
-        font-size: 12px;
-    }
-
-    #flag {
-        min-width: 50px;
-        min-height: 50px;
-
-        width: 50px;
-        height: 50px;
-    }
-    
-    footer {
-        width: 90vw;
-        white-space: normal;
-        font-size: 7px;
-    }
-}
-
-@media screen and (min-width: 1920px) {
 
     #dropdown-content {
         width: 300px;
@@ -273,258 +108,113 @@ header {
         font-size: 20px;
         padding: 12px 16px;
     }
-    
-    #bLeft > img ,#bRight > img {
+
+    #bRight {
+        margin-left: auto;
+        margin-right: 2%;
+    }
+
+    #bLeft {
+        margin-right: auto;
+        margin-left: 2%;
+    }
+
+    #bLeft > img, #bRight > img {
         user-select: none;
         width: 27px;
         height: 27px;
     }
 
-    #bRight {
-        margin-right: 60px;
-    }
+    #flag {
+        min-width: 90px;
+        min-height: 90px;
 
-    #bLeft {
-        margin-left: 60px;
-    }
-
-    .topBar > div:last-child > img {
-        width: 80px;
+        width: 90px;
         height: 90px;
     }
 
-    .topBar {
-        align-items: flex-start;
-        padding-top: 5px;
-    }
-
-    .topBarContext {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .topBarContext > a , .topBarContext > div {
-        text-align: start;
-    }
-
-    .topBarContext > a {
-        font-size: 28px;
-    }
-
-    .topBarContext > a > div:first-child {
-        font-size: 30px;
-    }
-
-    /* Стили для верхней панели */
-    .top_panel {
-        height: 50px;
-    }
-
-    .top_nav_panel {
-        height: 40px;
-        width: 80%;
-    }
-
-    /* Стили для ссылок и блоков в верхней навигационной панели */
-    .top_nav_panel > a, .top_nav_panel > div {
-        border-radius: 13px;
-        max-width: 460px;
-        min-width: fit-content;
-        font-size: 19px;
-        margin-top: 5px;
-        margin-bottom: 5px;
-    }
-
-    #flag {
-        min-width: 80px;
-        min-height: 80px;
-
-        width: 80px;
-        height: 80px;
+    hr {
+        margin-top: auto;
+        bottom: 25px;
+        width: 100%;
     }
 
     footer {
-        width: 100vw;
-        white-space: normal;
-        font-size: 13px;
+        margin-top: 5px;
+        font-size: 14px;
+        white-space: nowrap;
+        width: 100%;
+        text-align: center;
     }
 }
 
-/* Стили для экранов WQHD (2560x1440) и выше */
-@media screen and (min-width: 2560px) {
-
-    #dropdown-content {
-        width: 420px;
-        border-radius: 13px;
-    }
-
-    #dropdown-content > a:last-child {
-        margin-top: 10px;
-    }
-
-    #dropdown-content > a {
-        box-shadow: 0 4px 3px 4px rgba(34, 60, 80, 0.2);
-        border-radius: 15px;
-        font-size: 30px;
-        padding: 12px 16px;
-    }
-    
-    #bLeft > img ,#bRight > img {
-        user-select: none;
-        width: 35px;
-        height: 35px;
-    }
-
-    #bRight {
-        margin-right: 60px;
-    }
-
-    #bLeft {
-        margin-left: 60px;
-    }
-
-    .topBar > div:last-child > img {
-        width: 120px;
-        height: 120px;
-    }
-
-    .topBar {
-        align-items: flex-start;
-        padding-top: 5px;
-    }
-
-    .topBarContext {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .topBarContext > a , .topBarContext > div {
-        text-align: start;
-    }
-
-    .topBarContext > a {
-        font-size: 37px;
-    }
-
-    .topBarContext > a > div:first-child {
-        font-size: 35px;
-    }
-
-    /* Стили для верхней панели */
-    .top_panel {
-        height: 80px;
-    }
-
-    .top_nav_panel {
-        height: 80px;
-        width: 80%;
-    }
-
-    /* Стили для ссылок и блоков в верхней навигационной панели */
-    .top_nav_panel > a, .top_nav_panel > div {
-        border-radius: 7px;
-        max-width: 460px;
-        min-width: fit-content;
-        font-size: 27px;
-        height: 60px;
-        margin-top: 5px;
-        margin-bottom: 5px;
-    }
-
-    #flag {
-        min-width: 120px;
-        min-height: 120px;
-
-        width: 80px;
-        height: 80px;
-    }
-
-    footer {
-        width: 100vw;
-        font-size: 17px;
-    }
+.topBar {
+    background-color: #d9effc;
 }
 
-/* Стили для экранов 4K (3840x2160) и выше */
-@media screen and (min-width: 3840px) {
-    #bLeft > img ,#bRight > img {
-        user-select: none;
-        width: 55px;
-        height: 55px;
-    }
+.topBarContext > a {
+    color: black;
+    text-decoration: none;
+    transition: color 200ms ease-in-out;
+    font-family: Calibri, serif;
+}
 
-    #bRight {
-        margin-right: 60px;
-    }
+.top_panel {
+    background-color: #ededed;
+}
 
-    #bLeft {
-        margin-left: 60px;
-    }
+.topBarContext > a:hover {
+    color: #787878;
+}
 
-    .topBar > div:last-child > img {
-        width: 190px;
-        height: 190px;
-    }
+.top_nav_panel {
+    width: 85%;
+    height: inherit;
+    overflow: visible;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
 
-    .topBar {
-        align-items: flex-start;
-        padding-top: 5px;
-        padding-bottom: 20px;
-    }
+.top_nav_panel > a {
+    border-radius: 7px;
+    background-color: #d8d8d8;
+    width: 460px;
+    min-width: fit-content;
+    text-align: center;
+    white-space: nowrap;
+    margin: 0 10px;
+    padding: 8px;
+    font-size: 22px;
+    text-decoration: none;
+    color: black;
+    transition: background 180ms ease-in-out;
+}
 
-    .topBarContext {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
+.top_nav_panel > a:hover, .top_nav_panel > div:hover {
+    background: #5e5e5e;
+    cursor: pointer;
+}
 
-    .topBarContext > a , .topBarContext > div {
-        text-align: start;
-    }
+#bRight, #bLeft {
+    border: none;
+    z-index: 9999999;
+    visibility: hidden;
+    outline: none;
+}
 
-    .topBarContext > a {
-        font-size: 55px;
-    }
+#bRight, #bLeft {
+    cursor: pointer;
+}
 
-    .topBarContext > a > div:first-child {
-        font-size: 50px;
-    }
+#bRight:active, #bLeft:active {
+    color: #adadad;
+}
 
-    /* Стили для верхней панели */
-    .top_panel {
-        height: 105px;
-    }
-
-    .top_nav_panel {
-        height: 105px;
-        width: 80%;
-    }
-
-    /* Стили для ссылок и блоков в верхней навигационной панели */
-    .top_nav_panel > a, .top_nav_panel > div {
-        border-radius: 13px;
-        max-width: 460px;
-        min-width: fit-content;
-        font-size: 45px;
-        height: 85px;
-        margin-top: 5px;
-        margin-bottom: 5px;
-    }
-
-    #flag {
-        min-width: 170px;
-        min-height: 170px;
-    }
-
-    footer {
-        width: 100vw;
-        font-size: 17px;
-    }
+#bRight > img {
+    transform: rotate(180deg);
 }
 
 #dropdown-content {
@@ -559,7 +249,7 @@ header {
     position: relative;
     border-radius: 300px;
     background: #fff;
-    margin: 10px;
+    margin: 10px 25px 10px 15px;
     overflow: hidden;
 }
 
@@ -613,28 +303,9 @@ header {
     border-radius: 7px;
 }
 
-/* Стили для горизонтальной линии */
-hr {
-    position: fixed;
-    bottom: 32px;
-    width: 100%;
-}
-
-/* Стили для подвала */
-footer {
-    white-space: nowrap;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    color: black; /* Замените на желаемый цвет текста */
-    text-align: center;
-    padding: 10px 0; /* Замените на желаемый внутренний отступ */
-}
-
 /* Анимация сдвига */
 .anim_right, .anim_left {
-    animation-duration: 400ms;
+    animation-duration: 600ms;
     animation-timing-function: ease-in-out;
     animation-direction: alternate;
     animation-fill-mode: forwards;
@@ -673,21 +344,37 @@ footer {
 @keyframes right {
     0% {
         transform: translateX(0);
-        opacity: 100%;
+        opacity: 1;
+    }
+    12.5% {
+        transform: translateX(-50px);
+        opacity: 0.5;
     }
     25% {
+        transform: translateX(-150px);
+        opacity: 0;
+    }
+    37.5% {
         transform: translateX(-150px);
         opacity: 0;
     }
     50% {
         opacity: 0;
     }
+    62.5% {
+        transform: translateX(150px);
+        opacity: 0;
+    }
     75% {
         transform: translateX(150px);
         opacity: 0;
     }
+    87.5% {
+        transform: translateX(50px);
+        opacity: 0.5;
+    }
     100% {
-        opacity: 100%;
+        opacity: 1;
         transform: translateX(0);
     }
 }
