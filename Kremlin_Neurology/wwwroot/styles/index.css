@@ -6,6 +6,8 @@
         margin-bottom: 20px;
         display: flex;
         height: 100%;
+        min-height: 750px;
+        background-color: cornflowerblue;
     }
 
     .main__content > img {
@@ -66,14 +68,7 @@
     }
 
     .employee_wrapper {
-        border-radius: 7px;
-        margin: 10px;
-        max-width: 400px;
-        min-width: 250px;
-        border: 1px solid #606060;
-        height: auto;
-        min-height: 60%;
-        max-height: 80%;
+
     }
 
     .employee_wrapper > h3 {
@@ -83,20 +78,11 @@
     }
     
     .employee_list {
-        display: flex;
-        flex-direction: column;
-        overflow: auto;
-        max-height: 90%;
+
     }
 
     .employee_list > a {
-        margin: 5px 10px;
-        text-decoration: none;
-        color: black;
-        font-family: Arial, serif;
-        font-size: 19px;
-        transition: all 200ms ease-in-out;
-        border-radius: 13px;
+
     }
 
     .content > fieldset {

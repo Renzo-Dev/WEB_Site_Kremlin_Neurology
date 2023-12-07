@@ -59,11 +59,11 @@ header {
     }
 
     .topBarContext > a > div:first-child {
-        font-size: 30px;
+        font-size: calc(30px + .50vw);
     }
 
     .topBarContext > a > div:last-child {
-        font-size: 28px;
+        font-size: calc(12px + 1vw);
         font-weight: 600;
     }
 
@@ -75,8 +75,8 @@ header {
     }
 
     .topBarImages > img {
-        width: 90px;
-        height: 90px;
+        width:  calc(62px + 2vw);;
+        height: calc(62px + 2vw);;
     }
 
     .top_panel {
@@ -126,11 +126,8 @@ header {
     }
 
     #flag {
-        min-width: 90px;
-        min-height: 90px;
-
-        width: 90px;
-        height: 90px;
+        width: calc(62px + 2vw);;
+        height: calc(62px + 2vw);;
     }
 
     hr {
@@ -141,7 +138,7 @@ header {
 
     footer {
         margin-top: 5px;
-        font-size: 14px;
+        font-size: calc(10px + .25vw);;
         white-space: nowrap;
         width: 100%;
         text-align: center;
@@ -186,8 +183,8 @@ header {
     text-align: center;
     white-space: nowrap;
     margin: 0 10px;
-    padding: 8px;
-    font-size: 22px;
+    padding: 7px;
+    font-size: calc(15px + .30vw);
     text-decoration: none;
     color: black;
     transition: background 180ms ease-in-out;

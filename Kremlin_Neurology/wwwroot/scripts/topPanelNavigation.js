@@ -105,7 +105,13 @@ document.addEventListener('DOMContentLoaded', () => {
     function showDropDownMenu() {
         let dropdownContent = document.getElementById('dropdown-content');
         dropdownContent.style.display = 'inline';
-        dropdownContent.style.left = document.querySelector('.test').getBoundingClientRect().left + 15 + 'px';
+        let elem = topNavPanel.querySelectorAll('a');
+        elem.forEach(el => {
+            if (el.textContent === "Ежегодные конференции ▼"){
+                dropdownContent.style.left = el.getBoundingClientRect().left + (el.getBoundingClientRect().width - dropdownContent.getBoundingClientRect().width) / 2 + 'px';
+                dropdownContent.style.top = el.getBoundingClientRect().top + 47 + 'px';
+            }
+        });
         dropdownContent.querySelectorAll('a').forEach(elem => {
             elem.addEventListener('mouseenter', () => {
                 test = true;
