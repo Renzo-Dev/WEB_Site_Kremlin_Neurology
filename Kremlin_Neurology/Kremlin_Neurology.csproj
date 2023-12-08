@@ -7,44 +7,44 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.3"/>
     </ItemGroup>
 
     <ItemGroup>
-      <_ContentIncludedByDefault Remove="wwwroot\library\07_CM8_23.pdf" />
-      <_ContentIncludedByDefault Remove="wwwroot\library\DiIR_2009_4_42-47.doc" />
-      <_ContentIncludedByDefault Remove="wwwroot\library\Ratner_A_Yu_Nevrologiya_novorozhdyonnyh_2005.djvu" />
+        <_ContentIncludedByDefault Remove="wwwroot\library\07_CM8_23.pdf"/>
+        <_ContentIncludedByDefault Remove="wwwroot\library\DiIR_2009_4_42-47.doc"/>
+        <_ContentIncludedByDefault Remove="wwwroot\library\Ratner_A_Yu_Nevrologiya_novorozhdyonnyh_2005.djvu"/>
     </ItemGroup>
 
     <ItemGroup>
-      <None Include="wwwroot\FileLibrary\AndreevaTE.doc" />
-      <None Include="wwwroot\FileLibrary\Artamonov_AV.pdf" />
-      <None Include="wwwroot\FileLibrary\Badalyan_LO_Detskaya_nevrologiya.zip" />
-      <None Include="wwwroot\FileLibrary\Barancevich_Posohina_Eff-t_Noo_pri_DE.pdf" />
-      <None Include="wwwroot\FileLibrary\BSS3_03-07.pdf" />
-      <None Include="wwwroot\FileLibrary\Conf_kardiovaskprof_2008-34.pdf" />
-      <None Include="wwwroot\FileLibrary\Consilium9_2009-75.pdf" />
-      <None Include="wwwroot\FileLibrary\Evdokimov_AG_Topolyanskij_VD_Bolezni_arterij_i_ven_(2e_izd).zip" />
-      <None Include="wwwroot\FileLibrary\HIR_2009_10_15.pdf" />
-      <None Include="wwwroot\FileLibrary\Karavaeva_Poltorak_Prim-e_Lad_postifekcion_Asten_r-va.pdf" />
-      <None Include="wwwroot\FileLibrary\kg907-5.pdf" />
-      <None Include="wwwroot\FileLibrary\kg907-9-10.pdf" />
-      <None Include="wwwroot\FileLibrary\kg_08-07.pdf" />
-      <None Include="wwwroot\FileLibrary\klin_recom_laser_rehab.doc" />
-      <None Include="wwwroot\FileLibrary\Kr-med_03-09_01.pdf" />
-      <None Include="wwwroot\FileLibrary\kremlin-med_02-01.doc" />
-      <None Include="wwwroot\FileLibrary\Kunina_OV.pdf" />
-      <None Include="wwwroot\FileLibrary\Kuznetsov_NV.pdf" />
-      <None Include="wwwroot\FileLibrary\limf-berem-manual.doc" />
-      <None Include="wwwroot\FileLibrary\lobzin_thez12.pdf" />
-      <None Include="wwwroot\FileLibrary\lobzin_thez175.pdf" />
-      <None Include="wwwroot\FileLibrary\NMGU-72.pdf" />
-      <None Include="wwwroot\FileLibrary\reaspomed_08-40.pdf" />
-      <None Include="wwwroot\FileLibrary\reaspomed_08-41.pdf" />
-      <None Include="wwwroot\FileLibrary\sovrem_revm-02-08-71.pdf" />
-      <None Include="wwwroot\FileLibrary\Vrach_01-10.pdf" />
-      <None Include="wwwroot\FileLibrary\Vrach_12-10_42.pdf" />
-      <None Include="wwwroot\FileLibrary\Zaharov_VV_Kogn-narush.pdf" />
+        <None Include="wwwroot\FileLibrary\AndreevaTE.doc"/>
+        <None Include="wwwroot\FileLibrary\Artamonov_AV.pdf"/>
+        <None Include="wwwroot\FileLibrary\Badalyan_LO_Detskaya_nevrologiya.zip"/>
+        <None Include="wwwroot\FileLibrary\Barancevich_Posohina_Eff-t_Noo_pri_DE.pdf"/>
+        <None Include="wwwroot\FileLibrary\BSS3_03-07.pdf"/>
+        <None Include="wwwroot\FileLibrary\Conf_kardiovaskprof_2008-34.pdf"/>
+        <None Include="wwwroot\FileLibrary\Consilium9_2009-75.pdf"/>
+        <None Include="wwwroot\FileLibrary\Evdokimov_AG_Topolyanskij_VD_Bolezni_arterij_i_ven_(2e_izd).zip"/>
+        <None Include="wwwroot\FileLibrary\HIR_2009_10_15.pdf"/>
+        <None Include="wwwroot\FileLibrary\Karavaeva_Poltorak_Prim-e_Lad_postifekcion_Asten_r-va.pdf"/>
+        <None Include="wwwroot\FileLibrary\kg907-5.pdf"/>
+        <None Include="wwwroot\FileLibrary\kg907-9-10.pdf"/>
+        <None Include="wwwroot\FileLibrary\kg_08-07.pdf"/>
+        <None Include="wwwroot\FileLibrary\klin_recom_laser_rehab.doc"/>
+        <None Include="wwwroot\FileLibrary\Kr-med_03-09_01.pdf"/>
+        <None Include="wwwroot\FileLibrary\kremlin-med_02-01.doc"/>
+        <None Include="wwwroot\FileLibrary\Kunina_OV.pdf"/>
+        <None Include="wwwroot\FileLibrary\Kuznetsov_NV.pdf"/>
+        <None Include="wwwroot\FileLibrary\limf-berem-manual.doc"/>
+        <None Include="wwwroot\FileLibrary\lobzin_thez12.pdf"/>
+        <None Include="wwwroot\FileLibrary\lobzin_thez175.pdf"/>
+        <None Include="wwwroot\FileLibrary\NMGU-72.pdf"/>
+        <None Include="wwwroot\FileLibrary\reaspomed_08-40.pdf"/>
+        <None Include="wwwroot\FileLibrary\reaspomed_08-41.pdf"/>
+        <None Include="wwwroot\FileLibrary\sovrem_revm-02-08-71.pdf"/>
+        <None Include="wwwroot\FileLibrary\Vrach_01-10.pdf"/>
+        <None Include="wwwroot\FileLibrary\Vrach_12-10_42.pdf"/>
+        <None Include="wwwroot\FileLibrary\Zaharov_VV_Kogn-narush.pdf"/>
     </ItemGroup>
 
 </Project>

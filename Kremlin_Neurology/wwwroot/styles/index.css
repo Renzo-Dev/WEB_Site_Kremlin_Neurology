@@ -36,7 +36,7 @@
         flex-direction: column;
         padding-left: 10px;
         height: fit-content;
-        max-height: calc(90* .25vw);
+        max-height: calc(90 * .25vw);
         overflow: auto;
     }
 
@@ -75,7 +75,7 @@
         border: 2px solid #959595;
         margin: 10px;
         border-radius: 7px;
-        
+
         height: fit-content;
         max-height: 100%;
         overflow: auto;
@@ -90,7 +90,7 @@
         font-family: Arial, serif;
         font-size: calc(3 * .33vw);
     }
-    
+
     .employee_list {
         display: flex;
         flex-direction: column;
@@ -124,7 +124,7 @@
     .content > fieldset > legend {
         margin: 0 50px;
         padding: 0 15px;
-        font-size: calc(4* .27vw);
+        font-size: calc(4 * .27vw);
     }
 
     .content > fieldset > legend > a {
@@ -136,7 +136,7 @@
 
     .content > fieldset > div {
         font-family: Arial, serif;
-        font-size: calc(4* .26vw);
+        font-size: calc(4 * .26vw);
         display: flex;
     }
 
@@ -154,7 +154,7 @@
 
     .content > fieldset > div:nth-child(3) {
         margin-top: 20px;
-        font-size: calc(4* .29vw);
+        font-size: calc(4 * .29vw);
         padding: 10px 10px 10px 0;
     }
 
@@ -172,6 +172,6 @@
     background-color: #c8c8c8;
 }
 
-.content > fieldset > legend > a:hover{
+.content > fieldset > legend > a:hover {
     color: #000000;
 }

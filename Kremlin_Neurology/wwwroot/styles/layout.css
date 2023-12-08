@@ -75,7 +75,7 @@ header {
     }
 
     .topBarImages > img {
-        width:  calc(62px + 2vw);;
+        width: calc(62px + 2vw);;
         height: calc(62px + 2vw);;
     }
 

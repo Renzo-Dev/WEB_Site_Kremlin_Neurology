@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 
-
 namespace Kremlin_Neurology.Controllers;
 
 public class HomeController : Controller
@@ -22,16 +21,14 @@ public class HomeController : Controller
     [HttpPost]
     public async Task<ActionResult?> CheckPassword()
     {
-        string tempPass = "123123";
+        var tempPass = "123123";
 
         using (var reader = new StreamReader(Request.Body))
         {
             var json = await reader.ReadToEndAsync();
             var passModel = JsonConvert.DeserializeObject<PasswordModel>(json);
             if (passModel != null && passModel.password == tempPass)
-            {
                 return PartialView("~/Views/Partials/PrivateLibrary.cshtml");
-            }
 
             return StatusCode(StatusCodes.Status401Unauthorized);
         }

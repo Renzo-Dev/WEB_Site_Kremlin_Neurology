@@ -8,22 +8,19 @@ public class FileController : Controller
     public IActionResult Download(string fileName)
     {
         // Путь к файлу внутри директории wwwroot
-        string filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/FileLibrary", fileName);
+        var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/FileLibrary", fileName);
 
         try
         {
             // Проверка наличия файла
-            if (!System.IO.File.Exists(filePath))
-            {
-                return NotFound($"Файл не найден. {fileName + filePath}");
-            }
+            if (!System.IO.File.Exists(filePath)) return NotFound($"Файл не найден. {fileName + filePath}");
 
             // Определение MIME-типа файла
-            string contentType = GetMimeType(fileName);
+            var contentType = GetMimeType(fileName);
 
             // Чтение содержимого файла в байтовый массив
-            byte[] fileBytes = System.IO.File.ReadAllBytes(filePath);
-            
+            var fileBytes = System.IO.File.ReadAllBytes(filePath);
+
             // Отправка файла как потока байтов с указанием типа MIME и имени файла
             return File(fileBytes, contentType, fileName);
         }
@@ -32,7 +29,7 @@ public class FileController : Controller
             return StatusCode(500, $"Произошла ошибка: {ex.Message}");
         }
     }
-    
+
     // Метод для определения MIME-типа файла на основе его расширения
     private string GetMimeType(string fileName)
     {
@@ -41,7 +38,7 @@ public class FileController : Controller
         // например, через регистр Windows или библиотеки, специализированные на определении MIME-типов.
 
         // Получение расширения файла
-        string extension = Path.GetExtension(fileName).ToLowerInvariant();
+        var extension = Path.GetExtension(fileName).ToLowerInvariant();
 
         switch (extension)
         {

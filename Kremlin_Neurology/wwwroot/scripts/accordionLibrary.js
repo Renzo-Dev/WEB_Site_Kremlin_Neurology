@@ -1,4 +1,4 @@
-window.addEventListener('DOMContentLoaded',()=> {
+window.addEventListener('DOMContentLoaded', () => {
     let acc = document.getElementsByClassName("accordion");
     let i;
 
