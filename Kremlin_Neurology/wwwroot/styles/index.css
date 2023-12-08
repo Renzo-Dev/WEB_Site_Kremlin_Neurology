@@ -5,14 +5,13 @@
     main {
         margin-bottom: 20px;
         display: flex;
-        height: 100%;
-        min-height: 750px;
-        background-color: cornflowerblue;
+        height: 90%;
+        min-height: 650px;
     }
 
     .main__content > img {
-        width: 360px;
-        height: 292px;
+        width: calc(90 * .25vw);
+        height: calc(60 * .23vw);
         border-radius: 7px;
     }
 
@@ -37,21 +36,21 @@
         flex-direction: column;
         padding-left: 10px;
         height: fit-content;
-        max-height: 400px;
+        max-height: calc(90* .25vw);
         overflow: auto;
     }
 
     .context > h3 {
         width: 100%;
         font-family: var(--beautifulFont);
-        font-size: 23px;
+        font-size: calc(4 * .24vw);
         margin-bottom: 20px;
     }
 
     .context > div {
         text-align: left;
         width: 100%;
-        font-size: 23px;
+        font-size: calc(4 * .27vw);
     }
 
     .context > div > a {
@@ -68,21 +67,46 @@
     }
 
     .employee_wrapper {
-
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 500px;
+        min-width: calc(50 * .25vw);;
+        border: 2px solid #959595;
+        margin: 10px;
+        border-radius: 7px;
+        
+        height: fit-content;
+        max-height: 100%;
+        overflow: auto;
     }
 
     .employee_wrapper > h3 {
         border-bottom: 2px solid black;
         padding: 10px 5px;
+        width: 100%;
         text-align: center;
+        margin-bottom: 10px;
+        font-family: Arial, serif;
+        font-size: calc(3 * .33vw);
     }
     
     .employee_list {
-
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        overflow: auto;
     }
 
     .employee_list > a {
+        margin: 5px 10px;
+        text-decoration: none;
+        color: black;
+        font-family: Arial, serif;
+        font-size: calc(5 * .25vw);
 
+        transition: all 200ms ease-in-out;
+        border-radius: 13px;
     }
 
     .content > fieldset {
@@ -92,16 +116,15 @@
         margin-bottom: 15px;
         display: flex;
         flex-direction: column;
-        width: fit-content;
         border-radius: 7px;
-        padding: 35px;
+        padding: calc(10 * .27vw);
         max-width: 70%;
     }
 
     .content > fieldset > legend {
         margin: 0 50px;
         padding: 0 15px;
-        font-size: 20px;
+        font-size: calc(4* .27vw);
     }
 
     .content > fieldset > legend > a {
@@ -113,7 +136,7 @@
 
     .content > fieldset > div {
         font-family: Arial, serif;
-        font-size: 20px;
+        font-size: calc(4* .26vw);
         display: flex;
     }
 
@@ -131,7 +154,7 @@
 
     .content > fieldset > div:nth-child(3) {
         margin-top: 20px;
-        font-size: 21px;
+        font-size: calc(4* .29vw);
         padding: 10px 10px 10px 0;
     }
 
@@ -143,6 +166,10 @@
         padding: 5px 10px;
         background-color: #c8c8c8;
     }
+}
+
+.employee_list > a:hover {
+    background-color: #c8c8c8;
 }
 
 .content > fieldset > legend > a:hover{
