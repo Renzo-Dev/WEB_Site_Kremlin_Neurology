@@ -34,17 +34,19 @@ html {
 @media only screen and (max-width: 406px) {
     .topBarContext {
         margin-left: 10px;
-        margin-top: 10px;
+        margin-top: 15px;
         justify-content: center;
         align-items: center;
     }
     
     .topBarContext > a > div:first-child {
-        font-size: calc(6px + 2vw);
+        font-size: calc(5px + 2vw);
+        text-align: center;
     }
 
     .topBarContext > a > div:last-child {
-        font-size: calc(6px + 2vw);
+        font-size: calc(5px + 2vw);
+        text-align: center;
         font-weight: 600;
     }
 
@@ -54,7 +56,7 @@ html {
 
     .top_nav_panel > a {
         padding: calc(2 * .15vw);
-        font-size: calc(10px + 1vw);
+        font-size: calc(7px + 1vw);
         text-overflow: ellipsis;
         overflow: hidden;
         max-height: 300px;
