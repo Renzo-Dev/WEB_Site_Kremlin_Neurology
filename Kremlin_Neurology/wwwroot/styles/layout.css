@@ -26,38 +26,264 @@ html {
     overflow: auto;
 }
 
-header {
++ {
     height: fit-content;
     width: 100%;
 }
 
-@media only screen and (max-width: 767px) {
-    /* Стили для устройств с максимальной шириной экрана 767px (обычно мобильные устройства) */
+@media only screen and (max-width: 406px) {
+    .topBarContext {
+        margin-left: 10px;
+        margin-top: 10px;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .topBarContext > a > div:first-child {
+        font-size: calc(6px + 2vw);
+    }
+
+    .topBarContext > a > div:last-child {
+        font-size: calc(6px + 2vw);
+        font-weight: 600;
+    }
+
+    .top_nav_panel {
+        justify-content: center;
+    }
+
+    .top_nav_panel > a {
+        padding: calc(2 * .15vw);
+        font-size: calc(10px + 1vw);
+        text-overflow: ellipsis;
+        overflow: hidden;
+        max-height: 300px;
+        width: fit-content;
+        min-width: 200px;
+    }
+
+    #bLeft > img, #bRight > img {
+        width: calc(10px + 1vw);
+        height: calc(10px + 1vw);
+    }
+
+    .topBarImages {
+        flex-direction: column;
+    }
+
+    .topBarImages > img {
+        width: calc(30px + 2vw);
+        height: calc(30px + 2vw);
+    }
+
+    #flag {
+        margin: 5px 5px 10px 5px;
+        height: 50px;
+        min-height: 50px;
+        width: 50px;
+        min-width: 50px;
+    }
 }
 
-@media only screen and (min-width: 768px) and (max-width: 1023px) {
-    /* Стили для устройств с шириной экрана от 768px до 1023px (обычно планшеты) */
-}
-
-@media only screen and (min-width: 1024px) and (max-width: 1279px) {
-    /* Стили для устройств с шириной экрана от 1024px до 1279px (небольшие ноутбуки и некоторые десктопы) */
-}
-
-/* Стили для устройств с шириной экрана от 1280px и более (большие десктопы) */
-@media only screen and (min-width: 1280px) {
-    .topBar {
-        height: fit-content;
-        display: flex;
-        flex-direction: row;
+@media only screen and (min-width: 407px) and (max-width: 500px) {
+    .topBarContext {
+        margin-left: 10px;
+        margin-top: 5px;
+        justify-content: center;
         align-items: center;
     }
 
-    .topBarContext {
-        margin-top: 20px;
-        align-self: start;
-        display: flex;
+    .topBarContext > a > div:first-child {
+        font-size: calc(4px + 2vw);
+    }
+    
+    .topBarContext > a > div:last-child {
+        font-size: calc(5px + 2vw);
+        font-weight: 700;
     }
 
+    .top_nav_panel {
+        justify-content: center;
+    }
+
+    .top_nav_panel > a {
+        padding: calc(2 * .15vw);
+        font-size: calc(10px + 1vw);
+        text-overflow: ellipsis;
+        overflow: hidden;
+        max-height: 460px;
+        width: fit-content;
+        min-width: 300px;
+    }
+
+    #bLeft > img, #bRight > img {
+        width: calc(10px + 1vw);
+        height: calc(10px + 1vw);
+    }
+    
+    .topBarImages {
+        flex-direction: row;
+    }
+
+    .topBarImages > img {
+        width: calc(30px + 2vw);
+        height: calc(30px + 2vw);
+    }
+
+    #flag {
+        margin: 5px 10px 10px 5px;
+        height: 40px;
+        min-height: 40px;
+        width: 40px;
+        min-width: 40px;
+    }
+}
+/* Стили для устройств с максимальной шириной экрана 767px (обычно мобильные устройства) */
+
+@media only screen and (max-width: 767px) and (min-width: 500px) {
+    .topBarContext > a > div:first-child {
+        font-size: calc(6px + 2vw);
+    }
+
+    .topBarContext {
+        margin-left: 10px;
+        margin-top: 5px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .topBarContext > a > div:last-child {
+        font-size: calc(5px + 2vw);
+        font-weight: 700;
+    }
+
+    .top_nav_panel {
+        justify-content: center;
+    }
+    
+    .top_nav_panel > a {
+        padding: calc(2 * .15vw);
+        font-size: calc(10px + 1vw);
+        text-overflow: ellipsis;
+        overflow: hidden;
+        max-height: 460px;
+        width: fit-content;
+        min-width: 300px;
+    }
+
+    .topBarImages > img {
+        width: calc(40px + 2vw);
+        height: calc(40px + 2vw);
+    }
+
+    #bLeft > img, #bRight > img {
+        width: calc(10px + 1vw);
+        height: calc(10px + 1vw);
+    }
+
+    .topBarImages {
+        flex-direction: row;
+    }
+    
+    #flag {
+        margin: 5px 10px 10px 5px;
+        height: 60px;
+        min-height: 60px;
+        width: 60px;
+        min-width: 60px;
+    }
+}
+
+@media only screen and (min-width: 450px) and (max-width: 530px) {
+    #flag {
+        margin: 5px 5px 10px 5px;
+        height: 60px;
+        min-height: 60px;
+        width: 60px;
+        min-width: 60px;
+    }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+    #flag {
+        margin: 5px 15px 10px 5px;
+        height: 75px;
+        min-height: 75px;
+        width: 75px;
+        min-width: 75px;
+    }
+}
+
+
+/* Стили для устройств с шириной экрана от 768px до 1023px (обычно планшеты) */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+
+    .top_nav_panel{
+        justify-content: space-between;
+    }
+
+    .topBarContext {
+        margin-left: 10px;
+        margin-top: 10px;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .topBarContext > a > div:first-child {
+        font-size: calc(20px + .50vw);
+    }
+
+    .topBarContext > a > div:last-child {
+        font-size: calc(17px + 1vw);
+        font-weight: 600;
+    }
+
+    .top_nav_panel > a {
+        padding: 7px;
+        font-size: calc(15px + .30vw);
+        text-overflow: ellipsis;
+        overflow: hidden;
+        max-height: 430px;
+        width: fit-content;
+        min-width: 300px;
+    }
+
+    .topBarImages > img {
+        width: calc(62px + 2vw);
+        height: calc(62px + 2vw);
+    }
+
+    #bLeft > img, #bRight > img {
+        width: calc(10px + 1vw);
+        height: calc(10px + 1vw);
+    }
+
+    .topBarImages {
+        flex-direction: row;
+    }
+    
+    #flag {
+        margin: 10px 25px 10px 15px;
+        height: 80px;
+        min-height: 80px;
+        width: 80px;
+        min-width: 80px;
+    }
+}
+
+/* Стили для устройств с шириной экрана от 1024px до 1279px (небольшие ноутбуки и некоторые десктопы) */
+@media only screen and (min-width: 1024px) and (max-width: 1279px) {
+    .top_nav_panel {
+        justify-content: space-between;
+    }
+
+    .topBarContext {
+        margin-left: 10px;
+        margin-top: 10px;
+        justify-content: center;
+        align-items: center;
+    }    
+    
     .topBarContext > a > div:first-child {
         font-size: calc(20px + .50vw);
     }
@@ -67,11 +293,63 @@ header {
         font-weight: 600;
     }
 
+    .top_nav_panel > a {
+        padding: 7px;
+        font-size: calc(15px + .30vw);
+        width: 460px;
+        min-width: fit-content;
+    }
+
+    .topBarImages > img {
+        width: calc(62px + 2vw);
+        height: calc(62px + 2vw);
+    }
+
+    #bLeft > img, #bRight > img {
+        width: calc(10px + 1vw);
+        height: calc(10px + 1vw);
+    }
+
     .topBarImages {
-        display: flex;
         flex-direction: row;
-        margin-left: auto;
-        margin-right: 15px;
+    }
+    
+    #flag {
+        margin: 10px 25px 10px 15px;
+        height: 90px;
+        min-height: 90px;
+        width: 90px;
+        min-width: 90px;
+    }
+}
+
+/* Стили для устройств с шириной экрана от 1280px и более (большие десктопы) */
+@media only screen and (min-width: 1280px) {
+    .top_nav_panel {
+        justify-content: space-between;
+    }
+
+    .topBarContext {
+        margin-left: 10px;
+        margin-top: 15px;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .topBarContext > a > div:first-child {
+        font-size: calc(20px + .50vw);
+    }
+
+    .topBarContext > a > div:last-child {
+        font-size: calc(12px + 1vw);
+        font-weight: 600;
+    }
+    
+    .top_nav_panel > a {
+        padding: 7px;
+        font-size: calc(15px + .30vw);
+        width: 460px;
+        min-width: fit-content;
     }
 
     .topBarImages > img {
@@ -79,74 +357,74 @@ header {
         height: calc(62px + 2vw);;
     }
 
-    .top_panel {
-        border-top: 2px solid #c5c5c5;
-        border-bottom: 2px solid #c5c5c5;
-        min-width: 300px;
-        width: 100%;
-        padding: 7px 0;
-        height: fit-content;
-        overflow: hidden;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-    }
-
-    #dropdown-content {
-        width: 300px;
-        border-radius: 13px;
-    }
-
-    #dropdown-content > a:last-child {
-        margin-top: 10px;
-    }
-
-    #dropdown-content > a {
-        box-shadow: 0 4px 3px 4px rgba(34, 60, 80, 0.2);
-        border-radius: 15px;
-        font-size: 20px;
-        padding: 12px 16px;
-    }
-
-    #bRight {
-        margin-left: auto;
-        margin-right: 2%;
-    }
-
-    #bLeft {
-        margin-right: auto;
-        margin-left: 2%;
-    }
-
     #bLeft > img, #bRight > img {
-        user-select: none;
         width: calc(10px + 1vw);
         height: calc(10px + 1vw);
     }
 
+    .topBarImages {
+        flex-direction: row;
+    }
+
     #flag {
-        width: calc(62px + 2vw);;
-        height: calc(62px + 2vw);;
-    }
-
-    hr {
-        margin-top: auto;
-        bottom: 25px;
-        width: 100%;
-    }
-
-    footer {
-        margin-top: 5px;
-        font-size: calc(10px + .25vw);;
-        white-space: nowrap;
-        width: 100%;
-        text-align: center;
+        margin: 10px 25px 10px 15px;
+        height: 100px;
+        min-height: 100px;
+        width: 100px;
+        min-width: 100px;
     }
 }
 
+.topBarImages > img:first-child {
+    margin-right: calc(1 * 1vw);
+}
+
+.topBarImages {
+    display: flex;
+    margin-left: auto;
+    margin-right: 15px;
+}
+
+.topBarContext {
+    align-self: start;
+    display: flex;
+}
+
 .topBar {
+    padding-bottom: calc(2 * .25vw);
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     background-color: #d9effc;
+}
+
+.top_panel {
+    border-top: 2px solid #c5c5c5;
+    border-bottom: 2px solid #c5c5c5;
+    min-width: 300px;
+    width: 100%;
+    padding: calc(3 * .15vw) 0;
+    height: fit-content;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+hr {
+    margin-top: auto;
+    width: 100%;
+}
+
+footer {
+    margin-top: 3px;
+    margin-bottom: 2px;
+    font-size: calc(10px + .25vw);;
+    white-space: nowrap;
+    width: 100%;
+    text-align: center;
 }
 
 .topBarContext > a {
@@ -154,10 +432,6 @@ header {
     text-decoration: none;
     transition: color 200ms ease-in-out;
     font-family: Calibri, serif;
-}
-
-.top_panel {
-    background-color: #ededed;
 }
 
 .topBarContext > a:hover {
@@ -171,20 +445,20 @@ header {
     position: relative;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     align-items: center;
 }
+
+#bLeft > img, #bRight > img {
+    user-select: none;
+}
+
 
 .top_nav_panel > a {
     border-radius: 7px;
     background-color: #d8d8d8;
-    width: 460px;
-    min-width: fit-content;
     text-align: center;
     white-space: nowrap;
     margin: 0 10px;
-    padding: 7px;
-    font-size: calc(15px + .30vw);
     text-decoration: none;
     color: black;
     transition: background 180ms ease-in-out;
@@ -196,6 +470,7 @@ header {
 }
 
 #bRight, #bLeft {
+    background-color: transparent;
     border: none;
     z-index: 9999999;
     visibility: hidden;
@@ -219,6 +494,9 @@ header {
     position: absolute;
     user-select: none;
     background-color: white;
+
+    width: 300px;
+    border-radius: 13px;
 }
 
 #dropdown-content > a:last-child {
@@ -232,6 +510,10 @@ header {
     text-align: center;
     display: block;
     transition: background-color 200ms ease-in-out;
+
+    border-radius: 15px;
+    font-size: 20px;
+    padding: 12px 16px;
 }
 
 /* Изменение стилей при наведении на ссылки в выпадающем списке */
@@ -240,13 +522,22 @@ header {
     background: #c6c6c6;
 }
 
+#bRight {
+    margin-left: auto;
+    margin-right: 2%;
+}
+
+#bLeft {
+    margin-right: auto;
+    margin-left: 2%;
+}
+
 /* Стили для флага */
 #flag {
     border: 1px solid #c6c6c6;
     position: relative;
     border-radius: 300px;
     background: #fff;
-    margin: 10px 25px 10px 15px;
     overflow: hidden;
 }
 

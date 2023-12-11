@@ -107,6 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 let topNavElem = topNavPanel.querySelectorAll('a')[i - startIndex];
                 topNavElem.textContent = panelElements[i];
                 topNavElem.setAttribute("href", `${hRefElements[i]}`);
+                topNavElem.setAttribute("title", `${panelElements[i]}`);
             }
             manageDropDown();
         }, 150);

@@ -43,7 +43,7 @@
     .context > h3 {
         width: 100%;
         font-family: var(--beautifulFont);
-        font-size: calc(4 * .24vw);
+        font-size: calc(4 * .26vw);
         margin-bottom: 20px;
     }
 
