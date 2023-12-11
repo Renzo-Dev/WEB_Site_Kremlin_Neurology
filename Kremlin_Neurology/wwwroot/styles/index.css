@@ -1,17 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Varela&display=swap');
 
+:root {
+    --mainContentHeight: calc(37 * 0.50vw);
+    --beautifulFont: 'Varela', sans-serif;
+}
+
 /* Стили для устройств с шириной экрана от 1280px и более (большие десктопы) */
 @media only screen and (min-width: 1280px) {
+
     main {
         margin-bottom: 20px;
         display: flex;
-        height: 90%;
-        min-height: 650px;
+        height: 40vw;
+        min-height: 490px;
     }
 
-    .main__content > img {
-        width: calc(90 * .25vw);
-        height: calc(60 * .23vw);
+    .context > img {
+        height: 15vw;
+        width: 18vw;
+        border: none;
+        outline: none;
+        user-select: none;
         border-radius: 7px;
     }
 
@@ -21,48 +30,44 @@
         flex-direction: column;
     }
 
-    .content > fieldset {
-        margin-top: auto;
-    }
-
     .main__content {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
     }
 
     .context {
-        margin-top: -4px;
         display: flex;
-        flex-direction: column;
-        padding-left: 10px;
+        flex-direction: row;
         height: fit-content;
-        max-height: calc(90 * .25vw);
+        max-height: var(--mainContentHeight);
         overflow: auto;
     }
 
-    .context > h3 {
+    .main__content > h3 {
+        text-align: center;
         width: 100%;
         font-family: var(--beautifulFont);
-        font-size: calc(4 * .26vw);
+        font-size: 1.04vw;
         margin-bottom: 20px;
     }
 
-    .context > div {
+    .context > div > div {
+        padding-left: 13px;
         text-align: left;
         width: 100%;
-        font-size: calc(4 * .27vw);
+        font-size: 1.08vw;
     }
 
-    .context > div > a {
+    .context > div > div > a {
         text-decoration: none;
-        color: #534fff
+        color: #534fff;
     }
 
-    .context > div > a:hover {
+    .context > div > div > a:hover {
         color: #a3b0ec;
     }
 
-    .context > div:last-child {
+    .context > div > div:last-child {
         margin-top: 30px;
     }
 
@@ -71,11 +76,10 @@
         flex-direction: column;
         align-items: center;
         max-width: 500px;
-        min-width: calc(50 * .25vw);;
+        min-width: calc(50 * 0.25vw);
         border: 2px solid #959595;
         margin: 10px;
         border-radius: 7px;
-
         height: fit-content;
         max-height: 100%;
         overflow: auto;
@@ -88,7 +92,7 @@
         text-align: center;
         margin-bottom: 10px;
         font-family: Arial, serif;
-        font-size: calc(3 * .33vw);
+        font-size: 0.99vw;
     }
 
     .employee_list {
@@ -103,28 +107,25 @@
         text-decoration: none;
         color: black;
         font-family: Arial, serif;
-        font-size: calc(5 * .25vw);
-
+        font-size: 1.25vw;
         transition: all 200ms ease-in-out;
         border-radius: 13px;
     }
 
     .content > fieldset {
-        align-self: start;
-        border: 3px solid #7f7f7f;
         margin-top: auto;
-        margin-bottom: 15px;
+        border: 3px solid #7f7f7f;
         display: flex;
         flex-direction: column;
         border-radius: 7px;
-        padding: calc(10 * .27vw);
+        padding: 1.35vw;
         max-width: 70%;
     }
 
     .content > fieldset > legend {
         margin: 0 50px;
         padding: 0 15px;
-        font-size: calc(4 * .27vw);
+        font-size: 1.08vw;
     }
 
     .content > fieldset > legend > a {
@@ -136,7 +137,7 @@
 
     .content > fieldset > div {
         font-family: Arial, serif;
-        font-size: calc(4 * .26vw);
+        font-size: 1.04vw;
         display: flex;
     }
 
@@ -154,8 +155,8 @@
 
     .content > fieldset > div:nth-child(3) {
         margin-top: 20px;
-        font-size: calc(4 * .29vw);
-        padding: 10px 10px 10px 0;
+        font-size: 1.13vw;
+        padding: 0.7vw 0.7vw 0.7vw 0;
     }
 
     .content > fieldset > div > div:first-child {
