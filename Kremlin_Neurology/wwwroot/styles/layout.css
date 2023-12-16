@@ -19,7 +19,7 @@ html {
     flex-direction: column;
     justify-content: flex-start;
     height: 100vh;
-    min-height: 500px;
+    min-height: 400px;
     width: 100vw;
     min-width: 300px;
     font-family: var(--beautifulFont), serif;
@@ -33,15 +33,15 @@ html {
 
 @media only screen and (max-width: 406px) {
     .topBarContext {
-        margin-left: 10px;
         margin-top: 15px;
         justify-content: center;
         align-items: center;
     }
-    
+
     .topBarContext > a > div:first-child {
         font-size: calc(5px + 2vw);
         text-align: center;
+        margin-bottom: 5px;
     }
 
     .topBarContext > a > div:last-child {
@@ -56,7 +56,7 @@ html {
 
     .top_nav_panel > a {
         padding: calc(2 * .15vw);
-        font-size: calc(9px + 1vw);
+        font-size: calc(8px + 1vw);
         text-overflow: ellipsis;
         overflow: hidden;
         max-height: 300px;
@@ -65,8 +65,8 @@ html {
     }
 
     #bLeft > img, #bRight > img {
-        width: calc(10px + 1vw);
-        height: calc(10px + 1vw);
+        width: calc(15px + 1vw);
+        height: calc(15px + 1vw);
     }
 
     .topBarImages {
@@ -74,6 +74,8 @@ html {
     }
 
     .topBarImages > img {
+        margin-top: 5px;
+        margin-left: 5px;
         width: calc(30px + 2vw);
         height: calc(30px + 2vw);
     }
@@ -85,6 +87,7 @@ html {
         width: 50px;
         min-width: 50px;
     }
+
     footer {
         font-size: calc(1px + 1vw);
     }
@@ -112,12 +115,12 @@ html {
 
     .top_nav_panel > a {
         padding: calc(2 * .15vw);
-        font-size: calc(10px + 1vw);
+        font-size: calc(7px + 1vw);
         text-overflow: ellipsis;
         overflow: hidden;
-        max-height: 460px;
+        max-height: 300px;
         width: fit-content;
-        min-width: 300px;
+        min-width: 250px;
     }
 
     #bLeft > img, #bRight > img {
@@ -143,12 +146,11 @@ html {
     }
 
     footer {
-        font-size: calc(1px + 1vw);
+        font-size: calc(5 * .25vw);
     }
 }
 
-
-@media only screen and (max-width: 767px) and (min-width: 500px) {
+@media only screen and (min-width: 500px) and (max-width: 767px) {
     .topBarContext {
         margin-left: 10px;
         margin-top: 5px;
@@ -171,12 +173,12 @@ html {
 
     .top_nav_panel > a {
         padding: calc(2 * .15vw);
-        font-size: calc(10px + 1vw);
+        font-size: calc(8px + 1vw);
         text-overflow: ellipsis;
         overflow: hidden;
-        max-height: 460px;
+        max-height: 350px;
         width: fit-content;
-        min-width: 350px;
+        min-width: 250px;
     }
 
     .topBarImages > img {
@@ -202,7 +204,7 @@ html {
     }
 
     footer {
-        font-size: 6px;
+        font-size: calc(4 * .25vw);
     }
 }
 
@@ -229,7 +231,7 @@ html {
 
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
     .top_nav_panel {
-        justify-content: space-between;
+        justify-content: center;
     }
 
     .topBarContext {
@@ -249,13 +251,17 @@ html {
     }
 
     .top_nav_panel > a {
-        padding: 7px;
-        font-size: calc(15px + .30vw);
+        padding: 5px;
+        font-size: calc(13px + .30vw);
         text-overflow: ellipsis;
         overflow: hidden;
-        max-height: 430px;
+        max-height: 270px;
         width: fit-content;
-        min-width: 300px;
+        min-width: 270px;
+    }
+
+    .top_nav_panel > a:first-child {
+        margin-right: 50px;
     }
 
     .topBarImages > img {
@@ -281,10 +287,9 @@ html {
     }
 
     footer {
-        font-size: 10px;
+        font-size: calc(3 * .30vw);
     }
 }
-
 
 @media only screen and (min-width: 1024px) and (max-width: 1279px) {
     .top_nav_panel {
@@ -296,26 +301,26 @@ html {
         justify-content: center;
         align-items: center;
     }
-
+    
     .topBarContext > a > div:first-child {
-        font-size: calc(20px + .50vw);
+        font-size: calc(17px + .50vw);
     }
 
     .topBarContext > a > div:last-child {
-        font-size: calc(12px + 1vw);
+        font-size: calc(11px + 1vw);
         font-weight: 600;
     }
 
     .top_nav_panel > a {
-        padding: 7px;
-        font-size: calc(15px + .30vw);
-        width: 460px;
+        padding: 5px;
+        font-size: calc(13px + .30vw);
+        width: 400px;
         min-width: fit-content;
     }
 
     .topBarImages > img {
-        width: calc(62px + 2vw);
-        height: calc(62px + 2vw);
+        width: calc(52px + 2vw);
+        height: calc(52px + 2vw);
     }
 
     #bLeft > img, #bRight > img {
@@ -329,14 +334,14 @@ html {
 
     #flag {
         margin: 10px 25px 10px 15px;
-        height: 90px;
-        min-height: 90px;
-        width: 90px;
-        min-width: 90px;
+        height: 80px;
+        min-height: 80px;
+        width: 80px;
+        min-width: 80px;
     }
 
     footer {
-        font-size: 10px;
+        font-size: calc(3 * .25vw);
     }
 }
 
@@ -391,7 +396,7 @@ html {
     }
     
     footer {
-        font-size: 13px;
+        font-size: calc(3 * .25vw);
     }
 }
 
@@ -425,13 +430,12 @@ html {
     border-bottom: 2px solid #c5c5c5;
     min-width: 300px;
     width: 100%;
-    padding: 0.45vw 0;
+    padding: 0.75vw 0;
     height: fit-content;
     overflow: hidden;
     display: flex;
     flex-direction: row;
-    align-items: center;
-    justify-content: center;
+    align-items: center;    justify-content: center;
 }
 
 hr {
@@ -584,8 +588,8 @@ footer {
 
 /* Стили для скроллбара */
 ::-webkit-scrollbar {
-    width: 5px;
-    height: 6px;
+    width: 4px;
+    height: 4px;
 }
 
 /* Стили для бегунка скроллбара */
@@ -601,7 +605,7 @@ footer {
 
 /* Стили для фона скроллбара */
 ::-webkit-scrollbar-track {
-    background: #f1f1f1;
+    background: #c3c3c3;
     border-radius: 7px;
 }
 

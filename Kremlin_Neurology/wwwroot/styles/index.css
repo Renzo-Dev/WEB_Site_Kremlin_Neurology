@@ -5,9 +5,634 @@
     --beautifulFont: 'Varela', sans-serif;
 }
 
+@media only screen and (max-width: 406px) {
+    main {
+        margin-bottom: 10px;
+        display: flex;
+        height: 100%;
+        max-height: 100vh;
+        min-height: 450px;
+    }
+
+    .context > img {
+        align-self: center;
+        height: 25vw;
+        width: 35vw;
+        border: none;
+        outline: none;
+        user-select: none;
+        border-radius: 7px;
+    }
+
+    .content {
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .main__content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .context {
+        display: flex;
+        flex-direction: column;
+        height: fit-content;
+        max-height: 40vh;
+        min-height: 40vh;
+    }
+
+    .context > div {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        max-height: 30vh;
+        min-height: 85px;
+        overflow: auto;
+    }
+
+    .main__content > h3 {
+        text-align: center;
+        width: 100%;
+        font-family: var(--beautifulFont);
+        font-size: 3vw;
+        margin-bottom: 10px;
+    }
+
+    .context > div > div {
+        padding-right: 5px;
+        text-align: left;
+        width: 100%;
+        font-size: 2.7vw;
+    }
+
+    .context > div > div:last-child {
+        margin-top: 10px;
+    }
+    
+    .employee_wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 500px;
+        min-width: calc(80 * 0.25vw);
+        margin: 5px 10px 5px 5px;
+        border-radius: 3px;
+        height: fit-content;
+        max-height: 100%;
+        overflow: auto;
+    }
+    
+    .employee_wrapper > h3 {
+        padding: 5px 3px;
+        width: 100%;
+        font-family: Arial, serif;
+        font-size: 2.5vw;
+    }
+    
+    .employee_wrapper {
+        border: 1px solid #959595;
+    }
+
+    .employee_list {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        overflow: auto;
+    }
+
+    .employee_list > a:hover {
+        padding: 2px 3px;
+    }
+    
+    .employee_list > a {
+        margin: 5px 5px;
+        font-family: Arial, serif;
+        font-size: 2vw;
+        border-radius: 3px;
+    }
+    
+    ::-webkit-scrollbar {
+        width: 2px;
+        height: 2px;
+    }
+    
+    .content > fieldset {
+        margin-top: auto;
+        display: flex;
+        flex-direction: column;
+        border-radius: 7px;
+        padding: 1.45vw;
+        max-width: 100%;
+        border: 1px solid #7f7f7f;
+    }
+    
+    .content > fieldset > legend {
+        margin: 0 30px;
+        padding: 0 15px;
+        font-size: 2.8vw;
+    }
+    
+    .content > fieldset > legend > a {
+        font-weight: 600;
+    }
+
+    .content > fieldset > div {
+        font-family: Arial, serif;
+        font-size: 2.5vw;
+        display: flex;
+    }
+
+    .content > fieldset > div div > div:first-child {
+        padding-bottom: 5px;
+        padding-left: 5px;
+        margin-bottom: 10px;
+    }
+
+    .content > fieldset > div > div:last-child {
+        padding-left: 10px;
+    }
+
+    .content > fieldset > div:nth-child(3) {
+        margin-top: 20px;
+        font-size: 2.5vw;
+        padding: 0.7vw 0.7vw 0.7vw 0;
+    }
+
+    .content > fieldset > div > div:first-child {
+        padding-right: 15px;
+    }
+}
+
+@media only screen and (min-width: 407px) and (max-width: 767px) {
+    main {
+        margin-bottom: 20px;
+        display: flex;
+        height: 50vw;
+        max-height: fit-content;
+        min-height: 450px;
+    }
+
+    .context > img {
+        height: 20vw;
+        width: 30vw;
+        border: none;
+        outline: none;
+        user-select: none;
+        border-radius: 7px;
+    }
+
+    .content {
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .main__content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .context {
+        display: flex;
+        flex-direction: row;
+        height: fit-content;
+        max-height: var(--mainContentHeight);
+    }
+
+    .context > div {
+        max-height: calc(45 * 0.50vw);
+        height: fit-content;
+        overflow: auto;
+    }
+
+    .main__content > h3 {
+        text-align: center;
+        width: 100%;
+        font-family: var(--beautifulFont);
+        font-size: 1.8vw;
+        margin-bottom: 20px;
+    }
+
+    .context > div > div {
+        padding-left: 13px;
+        padding-right: 10px;
+        text-align: left;
+        width: 100%;
+        font-size: 1.8vw;
+    }
+
+    .context > div > div:last-child {
+        margin-top: 30px;
+    }
+
+    ::-webkit-scrollbar {
+        width: 2px;
+        height: 2px;
+    }
+    
+    .employee_wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 500px;
+        min-width: calc(65 * 0.25vw);
+        margin: 10px;
+        border-radius: 5px;
+        height: fit-content;
+        max-height: 100%;
+        overflow: auto;
+    }
+
+    .employee_wrapper > h3 {
+        padding: 10px 5px;
+        width: 100%;
+        font-family: Arial, serif;
+        font-size: 1.3vw;
+    }
+
+    .employee_list {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        overflow: auto;
+    }
+
+    .employee_wrapper {
+        border: 1px solid #959595;
+    }
+    .content > fieldset {
+        border: 1px solid #7f7f7f;
+    }
+
+    .employee_list > a {
+        margin: 5px 10px;
+        font-family: Arial, serif;
+        font-size: 1.5vw;
+        border-radius: 13px;
+    }
+
+    .content > fieldset {
+        margin-top: auto;
+        display: flex;
+        flex-direction: column;
+        border-radius: 7px;
+        margin-bottom: -20px;
+        max-width: 70%;
+    }
+
+    .content > fieldset > legend {
+        margin: 0 30px;
+        padding: 0 15px;
+        font-size: 2vw;
+    }
+
+    .content > fieldset > legend > a {
+        font-weight: 600;
+    }
+
+    .content > fieldset > div {
+        font-family: Arial, serif;
+        font-size: 1.8vw;
+        display: flex;
+    }
+
+    .content > fieldset > div div > div:first-child {
+        padding-bottom: 5px;
+        padding-left: 5px;
+        margin-bottom: 10px;
+    }
+
+    .content > fieldset > div > div:last-child {
+        padding-left: 10px;
+    }
+
+    .content > fieldset > div:nth-child(3) {
+        margin-top: 20px;
+        font-size: 1.7vw;
+        padding: 0.7vw 0.7vw 0.7vw 0;
+    }
+
+    .content > fieldset > div > div:first-child {
+        padding-right: 15px;
+    }
+
+    .employee_list > a:hover {
+        padding: 5px 5px;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+    main {
+        margin-bottom: 20px;
+        display: flex;
+        height: 50vw;
+        max-height: fit-content;
+        min-height: 450px;
+    }
+
+    .context > img {
+        height: 17vw;
+        width: 20vw;
+        border: none;
+        outline: none;
+        user-select: none;
+        border-radius: 7px;
+    }
+
+    .content {
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .main__content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .context {
+        display: flex;
+        flex-direction: row;
+        height: fit-content;
+        max-height: var(--mainContentHeight);
+    }
+
+    .context > div {
+        max-height: calc(35 * 0.50vw);
+        height: fit-content;
+        overflow: auto;
+    }
+
+    .main__content > h3 {
+        text-align: center;
+        width: 100%;
+        font-family: var(--beautifulFont);
+        font-size: 1.5vw;
+        margin-bottom: 20px;
+    }
+
+    .context > div > div {
+        padding-left: 13px;
+        padding-right: 10px;
+        text-align: left;
+        width: 100%;
+        font-size: 1.5vw;
+    }
+
+    ::-webkit-scrollbar {
+        width: 2px;
+        height: 2px;
+    }
+
+    .context > div > div:last-child {
+        margin-top: 30px;
+    }
+
+    .employee_wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 500px;
+        min-width: calc(55 * 0.25vw);
+        margin: 10px;
+        border-radius: 7px;
+        height: fit-content;
+        max-height: 100%;
+        overflow: auto;
+    }
+
+    .employee_wrapper > h3 {
+        padding: 10px 5px;
+        width: 100%;
+        font-family: Arial, serif;
+        font-size: 0.99vw;
+    }
+
+    .employee_list {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        overflow: auto;
+    }
+
+    .employee_wrapper {
+        border: 2px solid #959595;
+    }
+    .content > fieldset {
+        border: 2px solid #7f7f7f;
+    }
+
+    .employee_list > a {
+        margin: 5px 10px;
+        font-family: Arial, serif;
+        font-size: 1.25vw;
+        border-radius: 13px;
+    }
+
+    .content > fieldset {
+        margin-top: auto;
+        display: flex;
+        flex-direction: column;
+        border-radius: 7px;
+        padding: 1.45vw;
+        max-width: 70%;
+    }
+
+    .content > fieldset > legend {
+        margin: 0 50px;
+        padding: 0 15px;
+        font-size: 1.55vw;
+    }
+
+    .content > fieldset > legend > a {
+        font-weight: 600;
+    }
+
+    .content > fieldset > div {
+        font-family: Arial, serif;
+        font-size: 1.25vw;
+        display: flex;
+    }
+
+    .content > fieldset > div div > div:first-child {
+        padding-bottom: 5px;
+        padding-left: 5px;
+        margin-bottom: 10px;
+    }
+
+    .content > fieldset > div > div:last-child {
+        padding-left: 10px;
+    }
+
+    .content > fieldset > div:nth-child(3) {
+        margin-top: 20px;
+        font-size: 1.23vw;
+        padding: 0.7vw 0.7vw 0.7vw 0;
+    }
+
+    .content > fieldset > div > div:first-child {
+        padding-right: 15px;
+    }
+
+    .employee_list > a:hover {
+        padding: 5px 10px;
+    }
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1279px) {
+    main {
+        margin-bottom: 20px;
+        display: flex;
+        height: 40vw;
+        min-height: 490px;
+    }
+
+    .context > img {
+        height: 15vw;
+        width: 18vw;
+        border: none;
+        outline: none;
+        user-select: none;
+        border-radius: 7px;
+    }
+
+    .content {
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .main__content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .context {
+        display: flex;
+        flex-direction: row;
+        height: fit-content;
+        max-height: var(--mainContentHeight);
+    }
+    
+    .context > div {
+        max-height: calc(30 * 0.50vw);
+        height: fit-content;
+        overflow: auto;
+    }
+
+    .main__content > h3 {
+        text-align: center;
+        width: 100%;
+        font-family: var(--beautifulFont);
+        font-size: 1.3vw;
+        margin-bottom: 20px;
+    }
+
+    .context > div > div {
+        padding-left: 13px;
+        text-align: left;
+        width: 100%;
+        font-size: 1.2vw;
+    }
+
+    .context > div > div:last-child {
+        margin-top: 30px;
+    }
+
+    .employee_wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 500px;
+        min-width: calc(55 * 0.25vw);
+        margin: 10px;
+        border-radius: 7px;
+        height: fit-content;
+        max-height: 100%;
+        overflow: auto;
+    }
+
+    .employee_wrapper > h3 {
+        padding: 10px 5px;
+        width: 100%;
+        font-family: Arial, serif;
+        font-size: 0.99vw;
+    }
+
+    .employee_list {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        overflow: auto;
+    }
+
+    .employee_wrapper {
+        border: 2px solid #959595;
+    }
+    .content > fieldset {
+        border: 3px solid #7f7f7f;
+    }
+    
+    .employee_list > a {
+        margin: 5px 10px;
+        font-family: Arial, serif;
+        font-size: 1.25vw;
+        border-radius: 13px;
+    }
+
+    .content > fieldset {
+        margin-top: auto;
+        display: flex;
+        flex-direction: column;
+        border-radius: 7px;
+        padding: 1.45vw;
+        max-width: 70%;
+    }
+
+    .content > fieldset > legend {
+        margin: 0 50px;
+        padding: 0 15px;
+        font-size: 1.55vw;
+    }
+
+    .content > fieldset > legend > a {
+        font-weight: 600;
+    }
+
+    .content > fieldset > div {
+        font-family: Arial, serif;
+        font-size: 1.25vw;
+        display: flex;
+    }
+
+    .content > fieldset > div div > div:first-child {
+        padding-bottom: 5px;
+        padding-left: 5px;
+        margin-bottom: 10px;
+    }
+
+    .content > fieldset > div > div:last-child {
+        padding-left: 10px;
+    }
+
+    .content > fieldset > div:nth-child(3) {
+        margin-top: 20px;
+        font-size: 1.23vw;
+        padding: 0.7vw 0.7vw 0.7vw 0;
+    }
+
+    .content > fieldset > div > div:first-child {
+        padding-right: 15px;
+    }
+
+    .employee_list > a:hover {
+        padding: 5px 10px;
+    }
+}
+
 /* Стили для устройств с шириной экрана от 1280px и более (большие десктопы) */
 @media only screen and (min-width: 1280px) {
-
     main {
         margin-bottom: 20px;
         display: flex;
@@ -47,8 +672,8 @@
         text-align: center;
         width: 100%;
         font-family: var(--beautifulFont);
-        font-size: 1.04vw;
-        margin-bottom: 20px;
+        font-size: 1.2vw;
+        margin-bottom: 10px;
     }
 
     .context > div > div {
@@ -56,15 +681,6 @@
         text-align: left;
         width: 100%;
         font-size: 1.08vw;
-    }
-
-    .context > div > div > a {
-        text-decoration: none;
-        color: #534fff;
-    }
-
-    .context > div > div > a:hover {
-        color: #a3b0ec;
     }
 
     .context > div > div:last-child {
@@ -77,7 +693,6 @@
         align-items: center;
         max-width: 500px;
         min-width: calc(50 * 0.25vw);
-        border: 2px solid #959595;
         margin: 10px;
         border-radius: 7px;
         height: fit-content;
@@ -86,10 +701,8 @@
     }
 
     .employee_wrapper > h3 {
-        border-bottom: 2px solid black;
         padding: 10px 5px;
         width: 100%;
-        text-align: center;
         margin-bottom: 10px;
         font-family: Arial, serif;
         font-size: 0.99vw;
@@ -102,19 +715,22 @@
         overflow: auto;
     }
 
+    .employee_wrapper {
+        border: 2px solid #959595;
+    }
+    .content > fieldset {
+        border: 3px solid #7f7f7f;
+    }
+    
     .employee_list > a {
         margin: 5px 10px;
-        text-decoration: none;
-        color: black;
         font-family: Arial, serif;
         font-size: 1.25vw;
-        transition: all 200ms ease-in-out;
         border-radius: 13px;
     }
 
     .content > fieldset {
         margin-top: auto;
-        border: 3px solid #7f7f7f;
         display: flex;
         flex-direction: column;
         border-radius: 7px;
@@ -129,10 +745,7 @@
     }
 
     .content > fieldset > legend > a {
-        text-decoration: none;
-        color: #555555;
         font-weight: 600;
-        transition: color 100ms ease-in-out;
     }
 
     .content > fieldset > div {
@@ -142,14 +755,12 @@
     }
 
     .content > fieldset > div div > div:first-child {
-        border-bottom: 2px solid black;
         padding-bottom: 5px;
         padding-left: 5px;
         margin-bottom: 10px;
     }
 
     .content > fieldset > div > div:last-child {
-        border-left: 2px solid black;
         padding-left: 10px;
     }
 
@@ -165,8 +776,41 @@
 
     .employee_list > a:hover {
         padding: 5px 10px;
-        background-color: #c8c8c8;
     }
+}
+
+.context > div > div > a {
+    text-decoration: none;
+    color: #534fff;
+}
+
+.context > div > div > a:hover {
+    color: #a3b0ec;
+}
+
+.employee_wrapper > h3 {
+    border-bottom: 1px solid black;
+    text-align: center;
+}
+
+.employee_list > a {
+    text-decoration: none;
+    color: black;
+    transition: all 200ms ease-in-out;
+}
+
+.content > fieldset > legend > a {
+    text-decoration: none;
+    color: #555555;
+    transition: color 100ms ease-in-out;
+}
+
+.content > fieldset > div div > div:first-child {
+    border-bottom: 1px solid black;
+}
+
+.content > fieldset > div > div:last-child {
+    border-left: 1px solid black;
 }
 
 .employee_list > a:hover {

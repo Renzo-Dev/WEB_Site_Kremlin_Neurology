@@ -181,7 +181,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Calculate the number of visible elements based on width
         // Считаем количество видимых элементов в зависимости от ширины
         while (topPanelWidth > 150 && count < panelElements.length) {
-            topPanelWidth -= 460;
+            topPanelWidth -= 350;
             count++;
         }
 
